@@ -1,0 +1,29 @@
+:root {
+  /* Font variables */
+  --base-font-size: 1em;
+  --base-line-height: 1.5;
+  --header-line-height: 1.25;
+
+  /* Color variables */
+  --text-color: rgb(34, 40, 49);
+  --secondary-text-color: rgb(57, 62, 70);
+  --action-color: rgb(0, 173, 181);
+  --ghost-color: rgb(238, 238, 238);
+
+  /*  Space variables */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+  --space-xxl: 128px;
+}
+
+@custom-media --mq-small (min-width: 48em);
+@custom-media --mq-small-max (max-width: 47.9375em);
+@custom-media --mq-medium (min-width: 64em);
+@custom-media --mq-large (min-width: 85.375em);
+@custom-media --mq-xlarge (min-width: 120em);
+@custom-media --mq-xxlarge (min-width: 160em);
+@custom-media --mq-retina (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi);
