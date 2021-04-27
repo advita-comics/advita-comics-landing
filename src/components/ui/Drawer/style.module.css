@@ -1,0 +1,69 @@
+@import 'styles/variables.css';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  color: var(--bunker-color);
+  background-color: white;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  outline: none;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  background-color: white;
+  border-bottom: 1px solid var(--whisper-color);
+}
+
+.header .title {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.body {
+  padding: 16px;
+}
+
+.closeBtn {
+  position: relative;
+  margin-left: 5px;
+  width: 18px;
+  height: 18px;
+}
+
+.closeBtn::before,
+.closeBtn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 18px;
+  background-color: currentColor;
+  border-radius: 1px;
+}
+
+.closeBtn::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.closeBtn::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}

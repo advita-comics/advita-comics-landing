@@ -1,0 +1,64 @@
+@import 'styles/variables';
+
+.radioPrimary .radioLabel {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  color: var(--bunker-color);
+  padding-left: var(--space-lg);
+  cursor: pointer;
+
+  @media (--mq-xlarge) {
+    padding-left: 48px;
+  }
+}
+
+.radioPrimary .radioIcon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background-color: transparent;
+  transform: translateY(-50%);
+
+  @media (--mq-xlarge) {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.radioPrimary .radioIcon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: currentColor;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.radioPrimary .radioLabel:hover,
+.radioPrimary .radioInput:focus + .radioLabel {
+  color: var(--bunker-color-700);
+}
+
+.radioPrimary .radioInput:focus + .radioLabel .radioIcon {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: Highlight;
+
+  @media (-webkit-min-device-pixel-ratio: 0) {
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+  }
+}
+
+.radioPrimary .radioInput:checked + .radioLabel .radioIcon::before {
+  opacity: 1;
+}

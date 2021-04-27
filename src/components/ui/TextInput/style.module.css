@@ -1,0 +1,28 @@
+@import 'styles/variables';
+
+.inputPrimary .inputLabel {
+  display: inline-block;
+  vertical-align: top;
+  color: var(--bunker-color);
+  margin-bottom: var(--space-sm);
+  cursor: pointer;
+}
+
+.inputPrimary .inputInner {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  font: inherit;
+  padding: 10px 15px;
+  border: 1px solid var(--bunker-color);
+  background-color: transparent;
+}
+
+.inputPrimary .inputInner::placeholder {
+  color: var(--bunker-color-700);
+}
+
+.inputPrimary .errorMessage {
+  color: var(--free-speech-red-color);
+  margin-top: var(--space-md);
+}

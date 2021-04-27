@@ -1,0 +1,31 @@
+@import 'styles/variables.css';
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  margin-right: calc(-1 * var(--space-sm));
+  margin-bottom: calc(-1 * var(--space-sm));
+  padding: 0;
+  list-style: none;
+}
+
+.listItem {
+  margin-right: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  font-size: 0;
+}
+
+.socialButton {
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.socialButton:focus {
+  opacity: 0.8;
+}

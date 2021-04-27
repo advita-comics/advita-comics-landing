@@ -1,0 +1,59 @@
+@import 'styles/variables.css';
+
+.section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  color: white;
+  background-color: var(--bunker-color);
+}
+
+.title {
+  margin-bottom: var(--space-md);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--bunker-color-200);
+  margin-bottom: var(--space-lg);
+}
+
+.box {
+  color: var(--bunker-color);
+  background-color: white;
+  margin-bottom: var(--space-lg);
+}
+
+.donationDetailsBox {
+  display: block;
+}
+
+.donationDetailsBoxHidden {
+  display: none;
+}
+
+.legend {
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+.text {
+  margin: 0;
+}
+
+.text:not(:last-child) {
+  margin-bottom: var(--space-md);
+}
+
+.optionList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.option:not(:last-child) {
+  margin-bottom: var(--space-md);
+}
+
+.submitBtn {
+  width: 100%;
+}
