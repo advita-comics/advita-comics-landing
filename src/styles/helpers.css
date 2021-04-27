@@ -16,11 +16,14 @@ input[type='radio'].visually-hidden {
 .grid {
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr);
-  gap: var(--space-md);
 }
 
 .grid_gap-sm {
   gap: var(--space-sm);
+}
+
+.grid_gap_md {
+  gap: var(--space-md);
 }
 
 .grid_gap-lg {

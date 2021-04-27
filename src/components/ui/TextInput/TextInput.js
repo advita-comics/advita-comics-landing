@@ -76,7 +76,7 @@ TextInput.defaultProps = {
 };
 
 TextInput.propTypes = {
-  variant: PropTypes.oneOfType(['primary']),
+  variant: PropTypes.oneOf(['primary']),
   id: PropTypes.string.isRequired,
   name: PropTypes.string,
   label: PropTypes.node.isRequired,
@@ -95,7 +95,5 @@ TextInput.propTypes = {
   min: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   errorMessage: PropTypes.node,
 };
-
-TextInput.displayName = 'TextInput';
 
 export default TextInput;

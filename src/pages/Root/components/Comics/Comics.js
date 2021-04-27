@@ -13,8 +13,9 @@ function Comics() {
         <H2 className={styles.title}>Just start reading now!</H2>
 
         <p className={styles.subtitle}>
-          Another lorem ipsum dolor sit amet... dolor sit amet but dolor i am
-          ryba
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus
+          mauris, viverra et dapibus ut, ornare sed neque. Vestibulum ante ipsum
+          primis in faucibus orci luctus
         </p>
 
         <ul className={styles.comicList}>

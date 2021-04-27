@@ -47,7 +47,7 @@ const COMICS = [
   {
     id: 1,
     name: 'Cassia',
-    description: 'Lorem ipsum dolor sit amet ipsum dolor sit amet',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis a libero id dictum. In a placerat nisl, eu vulputate turpis. Phasellus auctor tortor diam, ornare efficitur neque dignissim quis. Proin quis pharetra neque, et sodales ex. Nullam metus lectus, lacinia quis ultrices vel, congue at eros. Fusce blandit dui vitae justo laoreet, nec suscipit felis porta. Proin sollicitudin sagittis ornare. Duis auctor, orci ac dignissim ullamcorper, nisi lacus aliquam ante, id rutrum mauris nunc et diam. Sed vitae urna in justo euismod lacinia. Mauris eget efficitur augue. Suspendisse potenti. Nullam consectetur commodo felis non placerat. Curabitur efficitur dolor vel tellus molestie, quis commodo dolor ultrices.',
     preview: {
       src: cassiaPreview,
       alt: 'Cassia solves the world',
@@ -116,7 +116,7 @@ const COMICS = [
   {
     id: 2,
     name: 'Fox',
-    description: 'Lorem ipsum dolor sit amet ipsum dolor sit amet',
+    description: 'Mauris dolor ex, commodo fringilla eleifend nec, pulvinar non ipsum. Suspendisse bibendum eros in massa varius cursus. Vestibulum et aliquam sem, sed hendrerit lorem. Vivamus vel lorem mollis, venenatis ante nec, ultrices magna. Nullam vitae velit leo. In quis risus viverra, ornare dolor vitae, faucibus odio. Nullam iaculis euismod elit in condimentum. Vestibulum ac nunc vitae eros pellentesque aliquam. In semper suscipit convallis. Nullam consequat leo et bibendum euismod. Morbi dui tellus, commodo quis tristique sit amet, ultricies at mauris.',
     preview: {
       src: foxPreview,
       alt: 'Fox solves the city',
@@ -177,7 +177,7 @@ const COMICS = [
   {
     id: 3,
     name: "O' Chicks",
-    description: 'Lorem ipsum dolor sit amet ipsum dolor sit amet',
+    description: 'Nam eu turpis dapibus, semper massa quis, eleifend lacus. Donec rutrum ante a purus facilisis ultrices. Suspendisse sed ornare ex. Nulla imperdiet odio nisl, a luctus neque malesuada id. Donec ultricies mauris et tincidunt molestie. Duis non nibh lacinia velit pulvinar porta. Ut diam velit, egestas a varius id, commodo quis justo. Nulla facilisi. Vestibulum semper ante eget porta efficitur. Cras maximus sem vitae lacus efficitur euismod. Donec nec est pellentesque, pharetra velit luctus, iaculis erat. Donec pretium facilisis odio, eget accumsan sapien ultricies rutrum. Sed at molestie libero. Mauris laoreet, libero non tempus ornare, neque mauris placerat tortor, et iaculis nulla magna sed nunc.',
     preview: {
       src: oChicksPreview,
       alt: 'O chicks solves the city',

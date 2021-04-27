@@ -47,11 +47,15 @@ function ComicItem(props) {
       </div>
 
       <a
-        className={styles.itemPreviewPhoto}
+        className={styles.itemPreviewPhotoWrapper}
         href={pdfLink}
         onClick={handlePreviewClick}
       >
-        <img src={preview.src} alt={preview.alt} />
+        <img
+          className={styles.itemPreviewPhoto}
+          src={preview.src}
+          alt={preview.alt}
+        />
       </a>
 
       <Drawer

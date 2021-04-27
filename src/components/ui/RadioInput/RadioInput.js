@@ -62,7 +62,7 @@ RadioInput.defaultProps = {
 };
 
 RadioInput.propTypes = {
-  variant: PropTypes.oneOfType(['primary']),
+  variant: PropTypes.oneOf(['primary']),
   id: PropTypes.string.isRequired,
   name: PropTypes.string,
   label: PropTypes.node.isRequired,
@@ -76,7 +76,5 @@ RadioInput.propTypes = {
   className: PropTypes.string,
   labelClassName: PropTypes.string,
 };
-
-RadioInput.displayName = 'RadioInput';
 
 export default RadioInput;

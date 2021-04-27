@@ -31,7 +31,7 @@ function SharePageViaSocial(props) {
           resetButtonStyle={false}
         >
           <span className="visually-hidden">Share using Facebook</span>
-          <FacebookIcon size={32} round />
+          <FacebookIcon />
         </FacebookShareButton>
       </li>
 
@@ -44,7 +44,7 @@ function SharePageViaSocial(props) {
           resetButtonStyle={false}
         >
           <span className="visually-hidden">Share using Mail.ru</span>
-          <MailruIcon size={32} round />
+          <MailruIcon />
         </MailruShareButton>
       </li>
 
@@ -57,7 +57,7 @@ function SharePageViaSocial(props) {
           resetButtonStyle={false}
         >
           <span className="visually-hidden">Share using Odnoklassniki</span>
-          <OKIcon size={32} round />
+          <OKIcon />
         </OKShareButton>
       </li>
 
@@ -68,7 +68,7 @@ function SharePageViaSocial(props) {
           resetButtonStyle={false}
         >
           <span className="visually-hidden">Share using Telegram</span>
-          <TelegramIcon size={32} round />
+          <TelegramIcon />
         </TelegramShareButton>
       </li>
 
@@ -79,7 +79,7 @@ function SharePageViaSocial(props) {
           resetButtonStyle={false}
         >
           <span className="visually-hidden">Share using Twitter</span>
-          <TwitterIcon size={32} round />
+          <TwitterIcon />
         </TwitterShareButton>
       </li>
 
@@ -90,7 +90,7 @@ function SharePageViaSocial(props) {
           resetButtonStyle={false}
         >
           <span className="visually-hidden">Share using Vk</span>
-          <VKIcon size={32} round />
+          <VKIcon />
         </VKShareButton>
       </li>
     </ul>
