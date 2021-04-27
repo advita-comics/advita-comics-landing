@@ -18,6 +18,9 @@
 }
 
 .socialButton {
+  display: block;
+  width: 32px;
+  height: 32px;
   border: 0;
   padding: 0;
   font: inherit;
@@ -26,6 +29,28 @@
   background-color: transparent;
 }
 
+.socialButton :global(svg) {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .socialButton:focus {
   opacity: 0.8;
+}
+
+@media (--mq-small) {
+  .list {
+    margin-right: calc(-1 * var(--space-md));
+    margin-bottom: calc(-1 * var(--space-md));
+  }
+
+  .listItem {
+    margin-right: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .socialButton {
+    width: 48px;
+    height: 48px;
+  }
 }

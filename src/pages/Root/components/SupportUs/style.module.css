@@ -1,6 +1,7 @@
 @import 'styles/variables.css';
 
 .section {
+  width: 100%;
   padding-top: 48px;
   padding-bottom: 48px;
   color: white;
@@ -8,11 +9,13 @@
 }
 
 .title {
+  text-align: center;
   margin-bottom: var(--space-md);
 }
 
 .subtitle {
   margin: 0;
+  text-align: center;
   color: var(--bunker-color-200);
   margin-bottom: var(--space-lg);
 }
@@ -56,4 +59,23 @@
 
 .submitBtn {
   width: 100%;
+}
+
+@media (--mq-small) {
+  .section {
+    float: right;
+    width: 40%;
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+}
+
+@media (--mq-large) {
+  .section {
+    width: 35%;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
 }

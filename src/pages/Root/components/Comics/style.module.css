@@ -1,15 +1,18 @@
 @import 'styles/variables.css';
 
 .section {
+  width: 100%;
   padding-top: 48px;
   padding-bottom: 48px;
 }
 
 .title {
+  text-align: center;
   margin-bottom: var(--space-md);
 }
 
 .subtitle {
+  text-align: center;
   margin: 0;
   color: var(--bunker-color-700);
   margin-bottom: var(--space-lg);
@@ -19,9 +22,26 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-xl);
 }
 
 .sharePageViaSocial {
   justify-content: center;
+}
+
+@media (--mq-small) {
+  .section {
+    float: left;
+    width: 60%;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+}
+
+@media (--mq-large) {
+  .section {
+    width: 65%;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
 }

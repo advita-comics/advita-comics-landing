@@ -1,8 +1,30 @@
-/* @import 'styles/variables.css';
+@import 'styles/variables.css';
 
 @media (--mq-small) {
   .sectionColumns {
-    display: flex;
-    flex-wrap: wrap;
+    position: relative;
   }
-} */
+
+  .sectionColumns::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  .sectionColumns::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--bunker-color);
+  }
+}
+
+@media (--mq-large) {
+  .sectionColumns::before {
+    width: 35%;
+  }
+}

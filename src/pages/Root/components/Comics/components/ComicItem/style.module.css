@@ -5,21 +5,22 @@
 }
 
 .item:not(:last-child) {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
-.itemPreviewPhoto {
+.itemPreviewPhotoWrapper {
   order: 0;
-  grid-column: col-start / span 6;
+  grid-column: col-start / span 12;
+  margin-bottom: var(--space-md);
 }
 
 .itemTextContent {
   order: 1;
-  grid-column: col-start 7 / span 6;
+  grid-column: col-start / span 12;
 }
 
 .itemName {
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
 }
 
 .itemDescription {
@@ -43,4 +44,19 @@
 
 .itemPhotos :global(img) {
   margin-bottom: var(--space-md);
+}
+
+@media (--mq-large) {
+  .itemPreviewPhotoWrapper {
+    grid-column: col-start / span 6;
+    margin-bottom: 0;
+    margin-right: var(--space-lg);
+  }
+
+  .itemTextContent {
+    grid-column: col-start 7 / span 12;
+    /* May be need overflow for medium devices */
+    /* max-height: 520px; */
+    /* overflow-y: auto; */
+  }
 }

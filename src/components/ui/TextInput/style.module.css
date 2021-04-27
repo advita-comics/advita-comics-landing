@@ -14,7 +14,7 @@
   max-width: 100%;
   font: inherit;
   padding: 10px 15px;
-  border: 1px solid var(--bunker-color);
+  border: 2px solid var(--bunker-color);
   background-color: transparent;
 }
 
