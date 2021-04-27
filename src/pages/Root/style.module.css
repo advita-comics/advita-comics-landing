@@ -1,0 +1,8 @@
+/* @import 'styles/variables.css';
+
+@media (--mq-small) {
+  .sectionColumns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+} */

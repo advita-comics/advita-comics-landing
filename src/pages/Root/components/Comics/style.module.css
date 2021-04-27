@@ -1,0 +1,27 @@
+@import 'styles/variables.css';
+
+.section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.title {
+  margin-bottom: var(--space-md);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--bunker-color-700);
+  margin-bottom: var(--space-lg);
+}
+
+.comicList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: var(--space-lg);
+}
+
+.sharePageViaSocial {
+  justify-content: center;
+}

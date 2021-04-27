@@ -24,7 +24,16 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          },
+          'postcss-loader',
+        ],
       },
     ],
   },
@@ -37,9 +46,7 @@ const config = {
 
   devServer: {
     hot: true,
-    overlay: true,
     historyApiFallback: true,
-    contentBase: false,
   },
 };
 

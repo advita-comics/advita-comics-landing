@@ -1,0 +1,74 @@
+@import 'styles/variables.css';
+
+.section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  background-color: var(--bunker-color);
+  color: white;
+}
+
+.title {
+  margin-bottom: var(--space-md);
+}
+
+.banner {
+  width: 100%;
+  margin-bottom: var(--space-md);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--bunker-color-200);
+  margin-bottom: var(--space-lg);
+}
+
+.learnMore {
+  color: white;
+}
+
+.learnMore:hover,
+.learnMore:focus {
+  text-decoration: underline;
+}
+
+.progress {
+  width: 100%;
+  margin-bottom: var(--space-md);
+}
+
+.descriptionList {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-right: calc(var(--space-md) * -1);
+  margin-bottom: var(--space-lg);
+}
+
+.descriptionItem {
+  width: 80px;
+  flex-grow: 1;
+  margin-right: var(--space-md);
+}
+
+.descriptionTitle {
+  font-weight: 700;
+  font-size: 1.15em;
+}
+
+.descriptionDetails {
+  margin: 0;
+  font-size: 0.9em;
+  color: var(--bunker-color-200);
+}
+
+.backProject {
+  width: 100%;
+}
+
+@media (--mq-small) {
+  .section {
+    order: 1;
+    width: 40%;
+  }
+}

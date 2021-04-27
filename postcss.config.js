@@ -1,11 +1,13 @@
+const path = require('path');
+
 const plugins = {
   production: {
     autoprefixer: {},
-    cssnano: {
-      preset: 'default',
-    },
     'postcss-pxtorem': {
       propList: ['*'],
+    },
+    cssnano: {
+      preset: 'default',
     },
   },
   development: {},
@@ -13,9 +15,12 @@ const plugins = {
 
 const config = {
   plugins: {
-    'postcss-import': {},
+    'postcss-import': {
+      path: [path.resolve(__dirname, 'src'), 'node_modules'],
+    },
     'postcss-preset-env': {
       stage: 0,
+      preserve: false,
     },
     ...(process.env.NODE_ENV === 'production' ? plugins.production : {}),
   },

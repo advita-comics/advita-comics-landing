@@ -1,0 +1,7 @@
+@import 'styles/variables.css';
+
+.header {
+  margin: 0;
+  font-weight: 700;
+  font-size: 26px;
+}

@@ -1,0 +1,6 @@
+@import 'styles/variables';
+
+.radioInputGroup .errorMessage {
+  color: var(--free-speech-red-color);
+  margin-top: var(--space-md);
+}

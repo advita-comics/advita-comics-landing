@@ -1,7 +1,21 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import React from 'react';
+import React, { StrictMode, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import Application from './Application';
+import ReactModal from 'react-modal';
+import RootPage from 'pages/Root';
+import './styles/index.css';
 
-ReactDOM.render(<Application />, document.getElementById('app-root'));
+function Application() {
+  useEffect(() => {
+    ReactModal.setAppElement(document.getElementById('root'));
+  }, []);
+
+  return (
+    <StrictMode>
+      <RootPage />
+    </StrictMode>
+  );
+}
+
+ReactDOM.render(<Application />, document.getElementById('root'));

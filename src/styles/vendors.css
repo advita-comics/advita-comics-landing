@@ -1,0 +1,5 @@
+@import 'normalize.css';
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}

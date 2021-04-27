@@ -1,0 +1,46 @@
+@import 'styles/variables';
+
+.item {
+  align-items: flex-start;
+}
+
+.item:not(:last-child) {
+  margin-bottom: var(--space-md);
+}
+
+.itemPreviewPhoto {
+  order: 0;
+  grid-column: col-start / span 6;
+}
+
+.itemTextContent {
+  order: 1;
+  grid-column: col-start 7 / span 6;
+}
+
+.itemName {
+  margin-bottom: var(--space-sm);
+}
+
+.itemDescription {
+  margin: 0;
+  color: var(--bunker-color-700);
+  margin-bottom: var(--space-md);
+}
+
+.itemDownload {
+  color: var(--bunker-color);
+}
+
+.itemDownload:hover,
+.itemDownload:focus {
+  text-decoration: underline;
+}
+
+.itemPhotos {
+  margin-bottom: calc(-1 * var(--space-md));
+}
+
+.itemPhotos :global(img) {
+  margin-bottom: var(--space-md);
+}
