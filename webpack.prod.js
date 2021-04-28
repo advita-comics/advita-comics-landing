@@ -1,8 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 const config = {
   mode: 'production',
@@ -11,6 +10,7 @@ const config = {
   output: {
     filename: 'main.[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/assets/',
     clean: true,
   },
 
@@ -42,8 +42,6 @@ const config = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin(),
-
     new MiniCssExtractPlugin({
       filename: 'main.[contenthash].css',
     }),
@@ -52,7 +50,7 @@ const config = {
       test: /\.(js|css)$/,
     }),
 
-    new BundleAnalyzerPlugin(),
+    new WebpackManifestPlugin(),
   ],
 
   resolve: {
