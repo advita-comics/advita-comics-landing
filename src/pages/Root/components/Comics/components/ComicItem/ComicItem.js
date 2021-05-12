@@ -42,7 +42,7 @@ function ComicItem(props) {
         <p className={styles.itemDescription}>{description}</p>
 
         <a className={styles.itemDownload} href={pdfLink} download>
-          Download (PDF)
+          Скачать (PDF)
         </a>
       </div>
 
@@ -59,7 +59,7 @@ function ComicItem(props) {
       </a>
 
       <Drawer
-        title={`Viewing of ${name}`}
+        title={name}
         isOpen={isViewerOpen}
         onClose={closeViewer}
       >

@@ -9,9 +9,7 @@ function ProjectOverview() {
   return (
     <section className={styles.section}>
       <Container mobileOnly>
-        <H1 className={styles.title}>
-          Lorem ipsum dolor sit amet!
-        </H1>
+        <H1 className={styles.title}>Стань героем нового комикса!</H1>
 
         <img
           className={styles.banner}
@@ -20,19 +18,36 @@ function ProjectOverview() {
         />
 
         <p className={styles.subtitle}>
-          Praesent purus ex, elementum sed blandit id, tempus a mi. Vestibulum
-          ac orci risus.
+          Перед тобой комиксы, которые обрываются на самом интересном месте:
+          супергерои вступили в бой со злом, но сами они не справляются. Нужен
+          тот человек, который поддержит в трудную минуту. Им можешь стать ты:
+          достаточно сделать пожертвование на этом сайте, добавить немного
+          информации о себе и оставить свой e-mail. Вместе мы не только поможем
+          главным героям очистить город от зла: собранные средства будут
+          перечислены на помощь тем, кто сейчас борется с раком. И как только
+          проект наберет нужную сумму, тебе на почту придет индивидуальный
+          комикс с продолжением, где ты становишься вторым главным героем. Фонд
+          AdVita Два года назад волонтеры и художники объединились, чтобы
+          осуществить мечту трех подопечных фонда AdVita – пациенток детского
+          онкологического отделения Алины, Ани и Любы. Их объединяла не только
+          борьба с онкологическими заболеваниями, но и большая любовь к
+          рисованию. Вместе с профессионалами девочки придумали три истории,
+          главными героями которых стали ковбойша Алика Фокс, хомяк-детектив
+          О`Чикс и инопланетянка-телепат Кассия. И вот уникальные комиксы почти
+          готовы увидеть свет)
           {' '}
-          <a className={styles.learnMore} href="/about">Learn more</a>
+          <a className={styles.learnMore} href="/about">
+            Подробнее
+          </a>
         </p>
 
         <ProgressBar
           variant="primary"
-          value={70}
+          value={30}
           max={100}
           className={styles.progress}
         >
-          70% from 100%
+          30% из 100% собрано
         </ProgressBar>
 
         <dl className={styles.descriptionList}>
@@ -41,7 +56,7 @@ function ProjectOverview() {
               <strong className={styles.descriptionTitle}>$24,913</strong>
             </dt>
             <dd className={styles.descriptionDetails}>
-              pledged of $4,118 goal
+              Собрано $4,118
             </dd>
           </div>
 
@@ -49,14 +64,14 @@ function ProjectOverview() {
             <dt className={styles.descriptionTerm}>
               <strong className={styles.descriptionTitle}>436</strong>
             </dt>
-            <dd className={styles.descriptionDetails}>backers</dd>
+            <dd className={styles.descriptionDetails}>Взносов</dd>
           </div>
 
           <div className={styles.descriptionItem}>
             <dt className={styles.descriptionTerm}>
               <strong className={styles.descriptionTitle}>8</strong>
             </dt>
-            <dd className={styles.descriptionDetails}>days to go</dd>
+            <dd className={styles.descriptionDetails}>Дней назад</dd>
           </div>
         </dl>
 
@@ -66,7 +81,7 @@ function ProjectOverview() {
           className={styles.backProject}
           href="#support-us"
         >
-          Back this project
+          Поддержать проект
         </Button>
       </Container>
     </section>

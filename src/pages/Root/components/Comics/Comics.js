@@ -10,7 +10,7 @@ function Comics() {
   return (
     <section className={styles.section}>
       <Container mobileOnly>
-        <H2 className={styles.title}>Just start reading now!</H2>
+        <H2 className={styles.title}>Выбери свою историю!</H2>
 
         <p className={styles.subtitle}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus

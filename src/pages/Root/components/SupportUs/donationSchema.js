@@ -5,18 +5,18 @@ const schema = yup.object().shape({
     yup
       .string()
       .nullable()
-      .required('Select comic to support please.'),
+      .required('Пожалуйста, выберете комикс.'),
   donationVariantId:
     yup
       .string()
       .nullable()
-      .required('Select donation variant please.'),
+      .required('Пожалуйста, выберете вариант пожертвования.'),
   donationAmount:
     yup
       .string()
-      .matches(/^[0-9]*$/, 'Only numbers are accesible')
+      .matches(/^[0-9]*$/, 'Пожалуйста, вводите только числа.')
       .nullable()
-      .required('Enter donation amount please'),
+      .required('Пожалуйста, введите объем пожертвования.'),
 });
 
 export default schema;
