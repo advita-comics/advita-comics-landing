@@ -1,7 +1,7 @@
 const DONATION_VARIANTS = [
   {
     id: 1,
-    name: 'Pledge 300 rub or more',
+    name: '300 рублей или более',
     description: [
       'If you close your eyes and listen carefully',
       '– when the wind is calm, and the world is quiet',
@@ -11,7 +11,7 @@ const DONATION_VARIANTS = [
   },
   {
     id: 2,
-    name: 'Pledge 400 rub or more',
+    name: '400 рублей или более',
     description: [
       'An easy-to-download digital copy of INFERNO GIRL RED. Plus:',
       "– Your name in the 'Special Thanks' section.",
@@ -20,7 +20,7 @@ const DONATION_VARIANTS = [
   },
   {
     id: 3,
-    name: 'Pledge 1000 rub or more',
+    name: '1000 рублей или более',
     description: [
       'Lorem ipsum dolor sit amet dolor sit amet',
       'This is a lorem ipsum super text, just ryba text',
@@ -29,7 +29,7 @@ const DONATION_VARIANTS = [
   },
   {
     id: 4,
-    name: 'Pledge another sum',
+    name: 'Другую сумма',
     description: 'Support the project for no reward, just because it speaks to you.',
     minAmount: 1,
   },

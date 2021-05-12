@@ -46,8 +46,8 @@ import ophoto12 from './assets/o-chicks/12.jpg';
 const COMICS = [
   {
     id: 1,
-    name: 'Cassia',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis a libero id dictum. In a placerat nisl, eu vulputate turpis. Phasellus auctor tortor diam, ornare efficitur neque dignissim quis. Proin quis pharetra neque, et sodales ex. Nullam metus lectus, lacinia quis ultrices vel, congue at eros. Fusce blandit dui vitae justo laoreet, nec suscipit felis porta. Proin sollicitudin sagittis ornare. Duis auctor, orci ac dignissim ullamcorper, nisi lacus aliquam ante, id rutrum mauris nunc et diam. Sed vitae urna in justo euismod lacinia. Mauris eget efficitur augue. Suspendisse potenti. Nullam consectetur commodo felis non placerat. Curabitur efficitur dolor vel tellus molestie, quis commodo dolor ultrices.',
+    name: 'Кассия. Чертоги Разума',
+    description: 'Вестийка Кассия, бежавшая с разоренной родной планеты,  много лет живет на Земле. Она давно освоилась и даже завела кота. Но прошлое не отпускает: вслед за ночными кошмарами в жизнь инопланетянки ворвался загадочный человек в черном и потребовал отдать волшебный кристалл. Злодей захватил власть в городе и устроил настоящую охоту, теперь Кассии как никогда нужна помощь.',
     preview: {
       src: cassiaPreview,
       alt: 'Cassia solves the world',
@@ -115,8 +115,8 @@ const COMICS = [
 
   {
     id: 2,
-    name: 'Fox',
-    description: 'Mauris dolor ex, commodo fringilla eleifend nec, pulvinar non ipsum. Suspendisse bibendum eros in massa varius cursus. Vestibulum et aliquam sem, sed hendrerit lorem. Vivamus vel lorem mollis, venenatis ante nec, ultrices magna. Nullam vitae velit leo. In quis risus viverra, ornare dolor vitae, faucibus odio. Nullam iaculis euismod elit in condimentum. Vestibulum ac nunc vitae eros pellentesque aliquam. In semper suscipit convallis. Nullam consequat leo et bibendum euismod. Morbi dui tellus, commodo quis tristique sit amet, ultricies at mauris.',
+    name: 'Алика Фокс. Огненный Демон',
+    description: 'Городок рядом с прииском Сильвервилль в серьезной опасности: шахтеры взрывами динамита разбудили древнее зло, спавшее под землей. Полчища упырей ринулись убивать мирных жителей. Противостоять им может только лихая ковбойша Алика Фокс, которой уже приходилось вступать в бой с нечистью. Но одной ей не справиться.',
     preview: {
       src: foxPreview,
       alt: 'Fox solves the city',
@@ -176,8 +176,8 @@ const COMICS = [
 
   {
     id: 3,
-    name: "O' Chicks",
-    description: 'Nam eu turpis dapibus, semper massa quis, eleifend lacus. Donec rutrum ante a purus facilisis ultrices. Suspendisse sed ornare ex. Nulla imperdiet odio nisl, a luctus neque malesuada id. Donec ultricies mauris et tincidunt molestie. Duis non nibh lacinia velit pulvinar porta. Ut diam velit, egestas a varius id, commodo quis justo. Nulla facilisi. Vestibulum semper ante eget porta efficitur. Cras maximus sem vitae lacus efficitur euismod. Donec nec est pellentesque, pharetra velit luctus, iaculis erat. Donec pretium facilisis odio, eget accumsan sapien ultricies rutrum. Sed at molestie libero. Mauris laoreet, libero non tempus ornare, neque mauris placerat tortor, et iaculis nulla magna sed nunc.',
+    name: 'Детектив О`Чикс',
+    description: 'Хомяк О`Чикс живет двойной жизнью: днем он домашний любимец, а по ночам перевоплощается в маленького детектива и ловит преступников. Однажды ночью начальник полиции Павел Сергеевич срочно вызывает детектива: катастрофа! Был украден новейший лазер, с помощью которого можно вскрывать любые двери. Преступников надо поймать к утру!',
     preview: {
       src: oChicksPreview,
       alt: 'O chicks solves the city',

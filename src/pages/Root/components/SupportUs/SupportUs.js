@@ -36,24 +36,21 @@ function SupportUs() {
     if (donationVariantId) {
       const donationVariant = findDonationVariant(donationVariantId);
 
-      setValue(
-        'donationAmount',
-        donationVariant.minAmount,
-        {
-          shouldValidate: true,
-          shouldDirty: true,
-        },
-      );
+      setValue('donationAmount', donationVariant.minAmount, {
+        shouldValidate: true,
+        shouldDirty: true,
+      });
     }
   }, [donationVariantId, setValue]);
 
   return (
     <section className={styles.section} id="support-us">
       <Container mobileOnly>
-        <H2 className={styles.title}>Support us.</H2>
+        <H2 className={styles.title}>Поддержи наших героев!</H2>
 
         <p className={styles.subtitle}>
-          Wee need your help realy. Lorem ipsum dolor sit amet!
+          Выбери историю, к продолжению которой ты присоединишься, и настрой
+          элементы персонализации твоего героя.
         </p>
 
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -63,7 +60,7 @@ function SupportUs() {
               errorMessage={errors.comicId?.message}
             >
               <RadioInputGroup.Legend className={styles.legend}>
-                Please select comic to support
+                Пожалуйста, выберете комикс:
               </RadioInputGroup.Legend>
 
               <RadioInputGroup.List className={styles.optionList}>
@@ -90,7 +87,7 @@ function SupportUs() {
               errorMessage={errors.donationVariantId?.message}
             >
               <RadioInputGroup.Legend className={styles.legend}>
-                Please select donation variant
+                Пожалуйста, выберете вариант пожертвования:
               </RadioInputGroup.Legend>
 
               <RadioInputGroup.List className={styles.optionList}>
@@ -118,12 +115,8 @@ function SupportUs() {
             errors={errors}
           />
 
-          <Button
-            type="submit"
-            variant="primary"
-            className={styles.submitBtn}
-          >
-            Continue
+          <Button type="submit" variant="primary" className={styles.submitBtn}>
+            Продолжить
           </Button>
         </form>
       </Container>

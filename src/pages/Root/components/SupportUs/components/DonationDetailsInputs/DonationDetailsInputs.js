@@ -27,7 +27,7 @@ function DonationDetailsInputs(props) {
     >
       <fieldset className={styles.fieldset}>
         <legend className={styles.legend}>
-          Customize your donate
+          Настройка пожертвования
         </legend>
 
         <p className={styles.text}>
@@ -40,8 +40,7 @@ function DonationDetailsInputs(props) {
           htmlType="number"
           inputMode="numeric"
           id={`donation-details-donation-amount-${donationVariant.id}`}
-          label="Enter donation amount"
-          placeholder="Donation amount"
+          label="Объем пожертвования:"
           name="donationAmount"
           errorMessage={errors.donationAmount?.message}
           min="1"
