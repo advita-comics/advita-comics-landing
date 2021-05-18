@@ -3,3 +3,7 @@
 .ReactModal__Body--open {
   overflow: hidden;
 }
+
+img[src*='widget.cloudpayments.ru'] {
+  display: inline;
+}
