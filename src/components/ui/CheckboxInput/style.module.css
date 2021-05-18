@@ -1,0 +1,65 @@
+@import 'styles/variables';
+
+.checkboxPrimary .checkboxLabel {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  color: var(--bunker-color);
+  padding-left: var(--space-lg);
+  cursor: pointer;
+
+  @media (--mq-xlarge) {
+    padding-left: 48px;
+  }
+}
+
+.checkboxPrimary .checkboxIcon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid currentColor;
+  background-color: transparent;
+  transform: translateY(-50%);
+
+  @media (--mq-xlarge) {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.checkboxPrimary .checkboxIcon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 40%;
+  border: 2px solid currentColor;
+  border-right: 0;
+  border-top: 0;
+  background-color: transparent;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  opacity: 0;
+}
+
+.checkboxPrimary .checkboxLabel:hover,
+.checkboxPrimary .checkboxInput:focus + .checkboxLabel {
+  color: var(--bunker-color-700);
+}
+
+.checkboxPrimary .checkboxInput:focus + .checkboxLabel .checkboxIcon {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: Highlight;
+
+  @media (-webkit-min-device-pixel-ratio: 0) {
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+  }
+}
+
+.checkboxPrimary .checkboxInput:checked + .checkboxLabel .checkboxIcon::before {
+  opacity: 1;
+}

@@ -57,6 +57,26 @@
   margin-bottom: var(--space-md);
 }
 
+.donationDetailsInput:not(:last-of-type) {
+  margin-bottom: var(--space-md);
+}
+
+.regPaymentsInputGroupText {
+  margin: 0;
+  margin-top: var(--space-sm);
+  font-size: 0.8em;
+  color: var(--bunker-color-700);
+}
+
+.regPaymentsInputGroupLink {
+  color: var(--bunker-color);
+}
+
+.regPaymentsInputGroupLink:hover,
+.regPaymentsInputGroupLink:focus {
+  text-decoration: underline;
+}
+
 .submitBtn {
   width: 100%;
 }

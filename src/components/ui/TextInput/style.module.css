@@ -24,5 +24,5 @@
 
 .inputPrimary .errorMessage {
   color: var(--free-speech-red-color);
-  margin-top: var(--space-md);
+  margin-top: var(--space-sm);
 }
