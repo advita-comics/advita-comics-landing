@@ -45,7 +45,8 @@ function SupportUs() {
       };
     }
 
-    widget.charge({
+    /** @todo may be change to auth */
+    widget.pay('charge', {
       /** @todo move public id to process.env variables */
       publicId: 'pk_1190d87b8a68d5f25673d03210c93',
       description: 'Благотворительное пожертвование в фонд AdVita',
