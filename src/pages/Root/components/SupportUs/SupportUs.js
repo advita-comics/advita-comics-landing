@@ -48,7 +48,7 @@ function SupportUs() {
     /** @todo may be change to auth */
     widget.pay('charge', {
       /** @todo move public id to process.env variables */
-      publicId: 'pk_1190d87b8a68d5f25673d03210c93',
+      publicId: 'pk_b430f8b23575e9942b71e7d2b3f49',
       description: 'Благотворительное пожертвование в фонд AdVita',
       amount: parseFloat(values.donationAmount),
       currency: 'RUB',
@@ -59,7 +59,7 @@ function SupportUs() {
     },
     (options) => {
       // eslint-disable-next-line no-console
-      console.log(options);
+      console.log('SUCCESS', options);
     },
     (reason, options) => {
       // eslint-disable-next-line no-console
