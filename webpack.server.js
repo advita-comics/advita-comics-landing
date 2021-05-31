@@ -1,42 +1,20 @@
-require('dotenv').config();
-
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { DefinePlugin } = require('webpack');
 const Dotenv = require('dotenv-webpack');
-
-const plugins = [
-  new Dotenv({
-    systemvars: true,
-  }),
-
-  new MiniCssExtractPlugin({
-    filename: 'main.[contenthash].css',
-  }),
-
-  new CompressionPlugin({
-    test: /\.(js|css)$/,
-  }),
-
-  new WebpackManifestPlugin(),
-];
-
-if (process.env.IS_BUNDLE_ANALYZER_PLUGIN_ENABLED) {
-  plugins.push(new BundleAnalyzerPlugin());
-}
 
 const config = {
   mode: 'production',
+  target: 'node',
 
-  entry: './src/index.js',
+  entry: './src/ssr/index.js',
   output: {
-    filename: 'main.[contenthash].js',
+    filename: 'ssr.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/assets/',
-    clean: true,
+    libraryTarget: 'commonjs2',
   },
+
+  externals: ['react-helmet'],
 
   module: {
     rules: [
@@ -52,10 +30,12 @@ const config = {
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
+              modules: {
+                exportOnlyLocals: true,
+              },
               importLoaders: 1,
             },
           },
@@ -65,7 +45,14 @@ const config = {
     ],
   },
 
-  plugins,
+  plugins: [
+    new Dotenv({
+      systemvars: true,
+    }),
+    new DefinePlugin({
+      'global.GENTLY': false,
+    }),
+  ],
 
   resolve: {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],

@@ -11,10 +11,11 @@
     "yarn": "1.x"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack serve --config webpack.dev.js",
-    "start:server": "cross-env NODE_ENV=production node ./server/index.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
-    "heroku-postbuild": "yarn build",
+    "start": "webpack serve --config webpack.dev.js",
+    "start:server": "nodemon -e js,json,md ./server/index.js",
+    "build": "NODE_ENV=production webpack --config webpack.prod.js",
+    "build:server": "NODE_ENV=production webpack --config webpack.server.js",
+    "heroku-postbuild": "NODE_ENV=production yarn build && yarn build:server",
     "lint": "eslint . --ext .js"
   },
   "husky": {
@@ -33,6 +34,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.0",
     "cssnano": "^4.1.10",
+    "dotenv-webpack": "^7.0.2",
     "eslint": "^7.23.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
@@ -59,6 +61,7 @@
     "@hookform/resolvers": "^2.4.0",
     "classnames": "^2.2.6",
     "core-js": "^3.9.1",
+    "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "history": "^5.0.0",

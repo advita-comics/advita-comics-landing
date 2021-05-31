@@ -15,6 +15,7 @@ const config = {
       jsx: true,
     },
     ecmaVersion: 12,
+    sourceType: 'module',
   },
   plugins: ['react'],
   rules: {
@@ -24,7 +25,8 @@ const config = {
   settings: {
     'import/resolver': {
       node: {
-        moduleDirectory: ['node_modules', 'src/'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['src', 'node_modules'],
       },
     },
   },
