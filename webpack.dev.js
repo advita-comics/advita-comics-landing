@@ -1,6 +1,7 @@
 const path = require('path');
 const { HotModuleReplacementPlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const config = {
   mode: 'development',
@@ -9,6 +10,7 @@ const config = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
 
   module: {
@@ -38,7 +40,13 @@ const config = {
     ],
   },
 
-  plugins: [new HotModuleReplacementPlugin(), new HtmlWebpackPlugin()],
+  plugins: [
+    new Dotenv({
+      systemvars: true,
+    }),
+    new HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin(),
+  ],
 
   resolve: {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
@@ -46,6 +54,7 @@ const config = {
 
   devServer: {
     hot: true,
+    port: 8080,
     historyApiFallback: true,
   },
 };

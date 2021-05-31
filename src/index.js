@@ -18,4 +18,8 @@ function Application() {
   );
 }
 
-ReactDOM.render(<Application />, document.getElementById('root'));
+if (process.env.NODE_ENV === 'development') {
+  ReactDOM.render(<Application />, document.getElementById('root'));
+} else if (process.env.NODE_ENV === 'production') {
+  ReactDOM.hydrate(<Application />, document.getElementById('root'));
+}

@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html 
+  lang="ru" 
+  <%- helmet.htmlAttributes.toString() %>
+>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <%- helmet.title.toString() %> 
+    <%- helmet.meta.toString() %> 
+    <%- helmet.link.toString() %>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Advita Comics</title>
     <link rel="stylesheet" href="<%- manifest['main.css'] %>" />
     <script src="https://widget.cloudpayments.ru/bundles/cloudpayments"></script>
   </head>
-  <body>
+  <body 
+    <%- helmet.bodyAttributes.toString() %>
+  >
     <noscript>
       Включите пожалуйста Javascript в настройках браузера, или обновите версию
       браузера.
     </noscript>
-    <div id="root"></div>
+
+    <div id="root">
+      <%- content %>
+    </div>
+
     <script src="<%- manifest['main.js'] %>"></script>
   </body>
 </html>

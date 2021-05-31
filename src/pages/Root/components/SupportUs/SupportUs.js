@@ -46,8 +46,7 @@ function SupportUs() {
     }
 
     widget.pay('charge', {
-      /** @todo move public id to process.env variables */
-      publicId: 'pk_1190d87b8a68d5f25673d03210c93',
+      publicId: process.env.CLOUDPAYMENTS_PUBLIC_ID,
       description: 'Благотворительное пожертвование в фонд AdVita',
       amount: parseFloat(values.donationAmount),
       currency: 'RUB',
@@ -55,14 +54,6 @@ function SupportUs() {
       email: values.userEmail,
       requireEmail: true,
       data: widgetData,
-    },
-    (options) => {
-      // eslint-disable-next-line no-console
-      console.log('SUCCESS', options);
-    },
-    (reason, options) => {
-      // eslint-disable-next-line no-console
-      console.log(reason, options);
     });
   };
 

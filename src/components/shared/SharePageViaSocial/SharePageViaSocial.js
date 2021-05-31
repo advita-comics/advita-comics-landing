@@ -25,7 +25,7 @@ function SharePageViaSocial(props) {
     <ul className={classNames(styles.list, className)}>
       <li className={styles.listItem}>
         <FacebookShareButton
-          url={window.location.href}
+          url="/"
           quote="Lorem ipsum quote!"
           className={styles.socialButton}
           resetButtonStyle={false}
@@ -37,7 +37,7 @@ function SharePageViaSocial(props) {
 
       <li className={styles.listItem}>
         <MailruShareButton
-          url={window.location.href}
+          url="/"
           title="Lorem ipsum title"
           description="Lorem ipsum desc"
           className={styles.socialButton}
@@ -50,7 +50,7 @@ function SharePageViaSocial(props) {
 
       <li className={styles.listItem}>
         <OKShareButton
-          url={window.location.href}
+          url="/"
           title="Lorem ipsum title"
           description="Lorem ipsum desc"
           className={styles.socialButton}
@@ -63,7 +63,7 @@ function SharePageViaSocial(props) {
 
       <li className={styles.listItem}>
         <TelegramShareButton
-          url={window.location.href}
+          url="/"
           className={styles.socialButton}
           resetButtonStyle={false}
         >
@@ -74,7 +74,7 @@ function SharePageViaSocial(props) {
 
       <li className={styles.listItem}>
         <TwitterShareButton
-          url={window.location.href}
+          url="/"
           className={styles.socialButton}
           resetButtonStyle={false}
         >
@@ -85,7 +85,7 @@ function SharePageViaSocial(props) {
 
       <li className={styles.listItem}>
         <VKShareButton
-          url={window.location.href}
+          url="/"
           className={styles.socialButton}
           resetButtonStyle={false}
         >
