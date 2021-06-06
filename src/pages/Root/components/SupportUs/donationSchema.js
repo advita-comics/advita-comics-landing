@@ -17,7 +17,10 @@ const schema = yup.object().shape({
       .matches(/^[0-9]*$/, 'Пожалуйста, вводите только числа.')
       .nullable()
       .required('Пожалуйста, введите объем пожертвования.'),
-
+  userName:
+    yup
+      .string()
+      .required('Пожалуйста, введите ваше имя.'),
   userEmail:
     yup
       .string()

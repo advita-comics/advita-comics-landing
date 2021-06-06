@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -13,6 +14,7 @@ function DonationDetailsInputs(props) {
     register,
     hidden,
     errors,
+    donationAmountProps,
   } = props;
 
   return (
@@ -27,11 +29,18 @@ function DonationDetailsInputs(props) {
         <p className={styles.text}>{donationVariant.description}</p>
 
         <TextInput
-          // eslint-disable-next-line react/jsx-props-no-spreading
-          {...register('userEmail', { required: true })}
+          {...register('userName')}
+          id="donation-details-user-name"
+          label="Ваше имя:"
+          name="userName"
+          errorMessage={errors.userName?.message}
+          containerClassName={styles.donationDetailsInput}
+        />
+
+        <TextInput
+          {...register('userEmail')}
           htmlType="email"
-          inputMode="email"
-          id={`donation-details-user-email-${donationVariant.id}`}
+          id="donation-details-user-email"
           label="Ваш email:"
           name="userEmail"
           errorMessage={errors.userEmail?.message}
@@ -39,11 +48,9 @@ function DonationDetailsInputs(props) {
         />
 
         <TextInput
-          // eslint-disable-next-line react/jsx-props-no-spreading
-          {...register('donationAmount', { required: true })}
+          {...donationAmountProps}
           htmlType="number"
-          inputMode="numeric"
-          id={`donation-details-donation-amount-${donationVariant.id}`}
+          id="donation-details-donation-amount"
           label="Объем пожертвования:"
           name="donationAmount"
           errorMessage={errors.donationAmount?.message}
@@ -51,12 +58,27 @@ function DonationDetailsInputs(props) {
           containerClassName={styles.donationDetailsInput}
         />
 
+        <CheckboxInput
+          {...register('isSubscribedToGetReport')}
+          name="isSubscribedToGetReport"
+          id="donation-details-is-subscribed-to-get-report"
+          label="Получить отчет о потраченных средствах"
+          containerClassName={styles.donationDetailsInput}
+        />
+
+        <CheckboxInput
+          {...register('isSubscribedToTrackProgress')}
+          name="isSubscribedToTrackProgress"
+          id="donation-details-is-subscribed-to-track-progress"
+          label="Отслеживать прогресс"
+          containerClassName={styles.donationDetailsInput}
+        />
+
         <div className={styles.regPaymentsInputGroup}>
           <CheckboxInput
-            // eslint-disable-next-line react/jsx-props-no-spreading
             {...register('areRegularPaymentsEnabled')}
             name="areRegularPaymentsEnabled"
-            id={`donation-details-reg-payments-${donationVariant.id}`}
+            id="donation-details-reg-payments"
             label="Помогать ежемесячно"
           />
 
@@ -90,6 +112,7 @@ DonationDetailsInputs.propTypes = {
   donationVariant: types.models.DonationVariantType,
   hidden: PropTypes.bool,
   errors: PropTypes.objectOf(PropTypes.object).isRequired,
+  donationAmountProps: PropTypes.shape({}).isRequired,
 };
 
 export default DonationDetailsInputs;
