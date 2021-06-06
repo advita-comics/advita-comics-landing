@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from '../style.module.css';
@@ -8,7 +8,11 @@ function List(props) {
 
   return (
     <ul className={classNames(styles.list, className)}>
-      {children}
+      {Children.map(children, (child) => (
+        cloneElement(child, {
+          containerComponent: 'li',
+        })
+      ))}
     </ul>
   );
 }

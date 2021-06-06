@@ -127,7 +127,6 @@ function SupportUs() {
                   <RadioInputGroup.Radio
                     key={comic.id}
                     {...register('comicId')}
-                    containerComponent="li"
                     containerClassName={styles.option}
                     name="comicId"
                     value={String(comic.id)}
@@ -154,7 +153,6 @@ function SupportUs() {
                     key={donationVariant.id}
                     {...donationVariantIdProps}
                     onChange={handleDonationVariantIdChange}
-                    containerComponent="li"
                     containerClassName={styles.option}
                     name="donationVariantId"
                     value={String(donationVariant.id)}

@@ -47,6 +47,19 @@
   margin-bottom: var(--space-md);
 }
 
+.fieldsetSecondary .optionList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-right: calc(-1 * var(--space-md));
+  margin-bottom: calc(-1 * var(--space-md));
+}
+
+.fieldsetSecondary .option {
+  margin-right: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
 .optionList {
   margin: 0;
   padding: 0;
@@ -57,8 +70,12 @@
   margin-bottom: var(--space-md);
 }
 
-.donationDetailsInput:not(:last-of-type) {
+.donationDetailsItem {
   margin-bottom: var(--space-md);
+}
+
+.donationDetailsFooter {
+  margin-top: var(--space-lg);
 }
 
 .regPaymentsInputGroupText {
