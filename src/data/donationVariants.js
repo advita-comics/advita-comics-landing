@@ -3,7 +3,7 @@ const DONATION_VARIANTS = [
     id: 1,
     name: '300 рублей или более',
     description: [
-      'If you close your eyes and listen carefully',
+      '300 RUB and more If you close your eyes and listen carefully',
       '– when the wind is calm, and the world is quiet',
       "– you'll be able to feel us thanking you for your support.",
     ].join(' '),
@@ -13,7 +13,7 @@ const DONATION_VARIANTS = [
     id: 2,
     name: '400 рублей или более',
     description: [
-      'An easy-to-download digital copy of INFERNO GIRL RED. Plus:',
+      '400 RUB and more An easy-to-download digital copy of INFERNO GIRL RED. Plus:',
       "– Your name in the 'Special Thanks' section.",
     ].join(' '),
     minAmount: 400,
@@ -22,7 +22,7 @@ const DONATION_VARIANTS = [
     id: 3,
     name: '1000 рублей или более',
     description: [
-      'Lorem ipsum dolor sit amet dolor sit amet',
+      '1000 RUB and more Lorem ipsum dolor sit amet dolor sit amet',
       'This is a lorem ipsum super text, just ryba text',
     ].join(' '),
     minAmount: 1000,
@@ -30,7 +30,7 @@ const DONATION_VARIANTS = [
   {
     id: 4,
     name: 'Другую сумма',
-    description: 'Support the project for no reward, just because it speaks to you.',
+    description: 'Other sum Support the project for no reward, just because it speaks to you.',
     minAmount: 1,
   },
 ];

@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { H2 } from 'components/ui/Typography';
@@ -23,6 +24,9 @@ function SupportUs() {
     resolver: yupResolver(donationSchema),
   });
 
+  const donationVariantIdProps = register('donationVariantId');
+  const donationAmountProps = register('donationAmount');
+
   const donationVariantId = watch('donationVariantId');
   const comicId = watch('comicId');
 
@@ -30,7 +34,48 @@ function SupportUs() {
     return DONATION_VARIANTS.find((variant) => variant.id === Number(id));
   }
 
+  function handleDonationVariantIdChange(event) {
+    donationVariantIdProps.onChange(event);
+
+    const { target } = event;
+    const donationVariant = findDonationVariant(target.value);
+
+    if (donationVariant) {
+      setValue('donationAmount', donationVariant.minAmount, {
+        shouldValidate: true,
+        shouldDirty: true,
+      });
+    }
+  }
+
+  function handleDonationAmountBlur(event) {
+    donationAmountProps.onBlur(event);
+
+    const { target } = event;
+    const donationVariant = findDonationVariant(donationVariantId);
+
+    if (target.value && donationVariant) {
+      const sortedDonationVariants = DONATION_VARIANTS.sort((a, b) => (
+        b.minAmount - a.minAmount
+      ));
+
+      const newDonationVariant = sortedDonationVariants.find((variant) => (
+        target.value >= variant.minAmount
+      ));
+
+      if (newDonationVariant) {
+        setValue('donationVariantId', String(newDonationVariant.id), {
+          shouldValidate: true,
+          shouldDirty: true,
+        });
+      }
+    }
+  }
+
   const onSubmit = (values) => {
+    // eslint-disable-next-line no-console
+    console.log(values);
+
     const widgetData = {};
 
     const widget = new window.cp.CloudPayments();
@@ -57,17 +102,6 @@ function SupportUs() {
     });
   };
 
-  useEffect(() => {
-    if (donationVariantId) {
-      const donationVariant = findDonationVariant(donationVariantId);
-
-      setValue('donationAmount', donationVariant.minAmount, {
-        shouldValidate: true,
-        shouldDirty: true,
-      });
-    }
-  }, [donationVariantId, setValue]);
-
   return (
     <section className={styles.section} id="support-us">
       <Container mobileOnly>
@@ -92,8 +126,7 @@ function SupportUs() {
                 {COMICS.map((comic) => (
                   <RadioInputGroup.Radio
                     key={comic.id}
-                    // eslint-disable-next-line react/jsx-props-no-spreading
-                    {...register('comicId', { required: true })}
+                    {...register('comicId')}
                     containerComponent="li"
                     containerClassName={styles.option}
                     name="comicId"
@@ -119,8 +152,8 @@ function SupportUs() {
                 {DONATION_VARIANTS.map((donationVariant) => (
                   <RadioInputGroup.Radio
                     key={donationVariant.id}
-                    // eslint-disable-next-line react/jsx-props-no-spreading
-                    {...register('donationVariantId', { required: true })}
+                    {...donationVariantIdProps}
+                    onChange={handleDonationVariantIdChange}
                     containerComponent="li"
                     containerClassName={styles.option}
                     name="donationVariantId"
@@ -138,6 +171,10 @@ function SupportUs() {
             register={register}
             hidden={!comicId || !donationVariantId}
             errors={errors}
+            donationAmountProps={{
+              ...donationAmountProps,
+              onBlur: handleDonationAmountBlur,
+            }}
           />
 
           <Button type="submit" variant="primary" className={styles.submitBtn}>

@@ -8,7 +8,7 @@
 }
 
 .progressPrimary[value] {
-  height: 8px;
+  height: 0.5em;
   color: var(--viridian-green-color);
   background-color: white;
 }

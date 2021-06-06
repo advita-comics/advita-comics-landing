@@ -24,7 +24,7 @@
 }
 
 .buttonPrimary {
-  padding: 16px;
+  padding: 0.8em 1em;
   color: white;
   background-color: var(--viridian-green-color);
 }
