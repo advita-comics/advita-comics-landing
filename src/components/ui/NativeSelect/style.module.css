@@ -1,0 +1,65 @@
+@import 'styles/variables';
+
+.select {
+  appearance: none;
+
+  text-indent: 0.01px;
+  text-overflow: '';
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  max-width: 100%;
+
+  font: inherit;
+  color: inherit;
+
+  background-color: transparent;
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.select::-ms-expand {
+  display: none;
+}
+
+.label {
+  cursor: pointer;
+}
+
+.option {
+  font-weight: 400;
+  /* Needed for windows */
+  color: black;
+}
+
+.selectPrimary .label {
+  display: inline-block;
+  vertical-align: top;
+  color: var(--bunker-color);
+  margin-bottom: var(--space-sm);
+  cursor: pointer;
+}
+
+.selectPrimary .select {
+  display: block;
+  width: 100%;
+  padding: 0.5em 0.8em;
+  border: 2px solid var(--bunker-color);
+}
+
+.selectPrimary .errorMessage {
+  color: var(--free-speech-red-color);
+  margin-top: var(--space-sm);
+}
