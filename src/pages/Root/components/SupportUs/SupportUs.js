@@ -85,7 +85,6 @@ function SupportUs() {
         recurrent: {
           interval: 'Month',
           period: 1,
-          /** @todo may be start date is needed here */
         },
       };
     }

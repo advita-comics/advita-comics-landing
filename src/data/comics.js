@@ -43,6 +43,10 @@ import ophoto10 from './assets/o-chicks/10.jpg';
 import ophoto11 from './assets/o-chicks/11.jpg';
 import ophoto12 from './assets/o-chicks/12.jpg';
 
+import cphotoV21 from './assets/cassia-v2/01.jpg';
+import cphotoV22 from './assets/cassia-v2/02.jpg';
+import cphotoV23 from './assets/cassia-v2/03.jpg';
+
 const COMICS = [
   {
     id: 1,
@@ -230,6 +234,31 @@ const COMICS = [
       },
       {
         src: ophoto12,
+        alt: '',
+      },
+    ],
+  },
+
+  {
+    id: 4,
+    name: 'Кассия. Чертоги Разума V2',
+    description: 'Вестийка Кассия, бежавшая с разоренной родной планеты,  много лет живет на Земле. Она давно освоилась и даже завела кота. Но прошлое не отпускает: вслед за ночными кошмарами в жизнь инопланетянки ворвался загадочный человек в черном и потребовал отдать волшебный кристалл. Злодей захватил власть в городе и устроил настоящую охоту, теперь Кассии как никогда нужна помощь.',
+    preview: {
+      src: cphotoV21,
+      alt: 'Cassia solves the world',
+    },
+    pdfLink: '/comics/cassia-v2.pdf',
+    images: [
+      {
+        src: cphotoV21,
+        alt: '',
+      },
+      {
+        src: cphotoV22,
+        alt: '',
+      },
+      {
+        src: cphotoV23,
         alt: '',
       },
     ],
