@@ -3,7 +3,6 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { H2 } from 'components/ui/Typography';
-import Container from 'components/ui/Container';
 import Button from 'components/ui/Button';
 import Box from 'components/ui/Box';
 import RadioInputGroup from 'components/ui/RadioInputGroup';
@@ -103,7 +102,7 @@ function SupportUs() {
 
   return (
     <section className={styles.section} id="support-us">
-      <Container mobileOnly>
+      <div className="container">
         <H2 className={styles.title}>Поддержи наших героев!</H2>
 
         <p className={styles.subtitle}>
@@ -178,7 +177,7 @@ function SupportUs() {
             Продолжить
           </Button>
         </form>
-      </Container>
+      </div>
     </section>
   );
 }

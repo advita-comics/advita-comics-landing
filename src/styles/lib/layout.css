@@ -20,12 +20,7 @@
   }
 }
 
-.mobileOnlyContainer {
-  margin-left: 0;
-  margin-right: 0;
-
-  @media (--mq-small-max) {
-    margin-left: 4%;
-    margin-right: 4%;
-  }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
 }

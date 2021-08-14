@@ -1,26 +1,27 @@
 @import 'styles/variables.css';
 
-.progress {
+.progress-bar {
   display: block;
   appearance: none;
   border: none;
   max-width: 100%;
+  height: 0.5em;
 }
 
-.progressPrimary[value] {
-  height: 0.5em;
+.progress-bar_primary[value] {
   color: var(--viridian-green-color);
   background-color: white;
+  border: 1px solid;
 }
 
-.progressPrimary[value]::-webkit-progress-bar {
+.progress-bar_primary[value]::-webkit-progress-bar {
   background-color: white;
 }
 
-.progressPrimary[value]::-webkit-progress-value {
+.progress-bar_primary[value]::-webkit-progress-value {
   background-color: var(--viridian-green-color);
 }
 
-.progressPrimary[value]::-moz-progress-bar {
+.progress-bar_primary[value]::-moz-progress-bar {
   background-color: var(--viridian-green-color);
 }

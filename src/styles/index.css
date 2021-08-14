@@ -1,4 +1,5 @@
-@import './vendors.css';
 @import './variables.css';
+@import './vendors.css';
 @import './global.css';
 @import './helpers.css';
+@import './lib/index.css';

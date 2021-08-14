@@ -1,6 +1,5 @@
 import React from 'react';
 import { H2 } from 'components/ui/Typography';
-import Container from 'components/ui/Container';
 import SharePageViaSocial from 'components/shared/SharePageViaSocial';
 import COMICS from 'data/comics';
 import ComicItem from './components/ComicItem';
@@ -9,7 +8,7 @@ import styles from './style.module.css';
 function Comics() {
   return (
     <section className={styles.section}>
-      <Container mobileOnly>
+      <div className="container">
         <H2 className={styles.title}>Выбери свою историю!</H2>
 
         <p className={styles.subtitle}>
@@ -25,7 +24,7 @@ function Comics() {
         </ul>
 
         <SharePageViaSocial className={styles.sharePageViaSocial} />
-      </Container>
+      </div>
     </section>
   );
 }

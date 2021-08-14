@@ -1,3 +1,5 @@
+@import './variables.css';
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -51,12 +53,6 @@ body {
   }
 }
 
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -64,15 +60,6 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: var(--header-line-height);
 }
 
 legend {
