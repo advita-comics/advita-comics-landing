@@ -1,16 +1,20 @@
+require('dotenv').config();
+
 const path = require('path');
 const { HotModuleReplacementPlugin } = require('webpack');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 const config = {
   mode: 'development',
 
-  entry: './src/index.js',
+  entry: './src/main-web.js',
+
   output: {
-    filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
+    filename: 'main.js',
   },
 
   module: {
@@ -22,7 +26,7 @@ const config = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        type: 'asset/resource',
+        loader: 'file-loader',
       },
       {
         test: /\.css$/,
@@ -45,6 +49,7 @@ const config = {
       systemvars: true,
     }),
     new HotModuleReplacementPlugin(),
+    new ReactRefreshWebpackPlugin(),
     new HtmlWebpackPlugin(),
   ],
 

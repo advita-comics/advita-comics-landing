@@ -10,8 +10,8 @@
     <%- helmet.meta.toString() %> 
     <%- helmet.link.toString() %>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script async src="https://widget.cloudpayments.ru/bundles/cloudpayments"></script>
     <link rel="stylesheet" href="<%- manifest['main.css'] %>" />
-    <script src="https://widget.cloudpayments.ru/bundles/cloudpayments"></script>
   </head>
   <body 
     <%- helmet.bodyAttributes.toString() %>
@@ -24,6 +24,10 @@
     <div id="root">
       <%- content %>
     </div>
+
+    <script>
+      window.initialGlobalState = <%- JSON.stringify(initialGlobalState) %>;
+    </script>
 
     <script src="<%- manifest['main.js'] %>"></script>
   </body>

@@ -14,6 +14,7 @@ function renderApp() {
     return {
       content,
       helmet,
+      initialGlobalState: {},
     };
   });
 }
