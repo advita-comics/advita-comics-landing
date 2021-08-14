@@ -2,6 +2,8 @@ require('dotenv').config();
 
 const path = require('path');
 const express = require('express');
+const cors = require('cors');
+const config = require('./config');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -12,6 +14,8 @@ const isProduction = process.env.NODE_ENV === 'production';
 const manifest = isProduction ? require('../dist/manifest.json') : null;
 // eslint-disable-next-line import/no-unresolved
 const renderApp = isProduction ? require('../dist/ssr').default : null;
+
+app.use(cors(config.cors));
 
 app.use(express.static(path.resolve(__dirname, '../public')));
 app.use('/assets', express.static(path.resolve(__dirname, '../dist')));
