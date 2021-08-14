@@ -16,7 +16,7 @@ const renderApp = isProduction ? require('../dist/node/main.js').default : null;
 async function runApplication() {
   const app = express();
   const port = process.env.PORT || 3000;
-  const host = process.env.LISTEN_HOST || '127.0.0.1';
+  // const host = process.env.LISTEN_HOST || '127.0.0.1';
 
   app.disable('x-powered-by');
 
@@ -50,9 +50,9 @@ async function runApplication() {
     }
   });
 
-  app.listen({ port, host }, () => {
+  app.listen(port, () => {
     // eslint-disable-next-line no-console
-    console.log(`Server is listening on ${host}:${port}`);
+    console.log(`Server is listening on ${port}`);
   });
 }
 
