@@ -96,6 +96,6 @@
     "redux": "^4.1.1",
     "regenerator-runtime": "^0.13.7",
     "superagent": "^6.1.0",
-    "yup": "^0.32.9"
+    "yup": "^0.31.0"
   }
 }
