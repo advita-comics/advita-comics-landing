@@ -2,24 +2,23 @@
 
 .section {
   width: 100%;
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 3em;
+  padding-bottom: 3em;
   background-color: var(--bunker-color);
   color: white;
 }
 
 .title {
   text-align: center;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-xl);
 }
 
 .banner {
   width: 100%;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .subtitle {
-  text-align: center;
   margin: 0;
   color: var(--bunker-color-200);
   margin-bottom: var(--space-lg);
@@ -27,11 +26,12 @@
 
 .learnMore {
   color: white;
+  text-decoration: underline;
 }
 
 .learnMore:hover,
 .learnMore:focus {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .progress {
@@ -39,30 +39,33 @@
   margin-bottom: var(--space-md);
 }
 
-.descriptionList {
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  margin-right: calc(var(--space-md) * -1);
+.donationStatisticContainer {
   margin-bottom: var(--space-lg);
+  padding: 1em 0.5em;
+  color: var(--bunker-color);
+  background-color: white;
 }
 
-.descriptionItem {
-  width: 80px;
-  flex-grow: 1;
-  margin-right: var(--space-md);
+.donationStatistic {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 
-.descriptionTitle {
+.donationStatisticHead {
+  vertical-align: top;
   font-weight: 700;
   font-size: 1.15em;
+  text-align: center;
+  padding: 0.3em;
 }
 
-.descriptionDetails {
-  margin: 0;
+.donationStatisticInfo {
+  vertical-align: top;
   font-size: 0.9em;
-  color: var(--bunker-color-200);
+  text-align: center;
+  padding: 0.3em;
 }
 
 .backProject {
@@ -70,20 +73,38 @@
 }
 
 @media (--mq-small) {
-  .section {
-    float: right;
-    width: 40%;
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
-    padding-left: var(--space-md);
-    padding-right: var(--space-md);
+  .backProject {
+    width: auto;
+  }
+}
+
+@media (--mq-medium) {
+  .sectionColumns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: var(--space-lg);
+  }
+
+  .subtitle {
+    margin-bottom: 0;
+    margin-right: var(--space-lg);
+    width: calc(55% - var(--space-lg));
+  }
+
+  .donationStatisticContainer {
+    margin-bottom: 0;
+    width: 45%;
+    padding: 2em 1em;
   }
 }
 
 @media (--mq-large) {
-  .section {
-    width: 35%;
-    padding-left: var(--space-lg);
-    padding-right: var(--space-lg);
+  .subtitle {
+    width: calc(60% - var(--space-lg));
+  }
+
+  .donationStatisticContainer {
+    width: 40%;
   }
 }
