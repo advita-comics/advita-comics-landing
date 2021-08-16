@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react';
 import classNames from 'classnames';
-import { H3 } from 'components/ui/Typography';
 import Drawer from 'components/ui/Drawer';
 import types from 'types/index';
 import styles from './style.module.css';
@@ -35,9 +34,9 @@ function ComicItem(props) {
   );
 
   return (
-    <li className={classNames(styles.item, 'grid')}>
+    <li className={styles.item}>
       <div className={styles.itemTextContent}>
-        <H3 className={styles.itemName}>{name}</H3>
+        <h3 className={classNames('h3', styles.itemName)}>{name}</h3>
 
         <p className={styles.itemDescription}>{description}</p>
 
