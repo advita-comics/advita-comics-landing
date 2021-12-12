@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import classNames from 'classnames';
-import Drawer from 'components/ui/Drawer';
 import types from 'types/index';
+import Drawer from '../Drawer';
 import styles from './style.module.css';
 
 function ComicItem(props) {
@@ -11,7 +11,8 @@ function ComicItem(props) {
       description,
       preview,
       images,
-      pdfLink,
+      pdfSrc,
+      compact,
     },
   } = props;
 
@@ -35,38 +36,60 @@ function ComicItem(props) {
 
   return (
     <li className={styles.item}>
+      <img
+        className={styles.itemPreviewPhoto}
+        src={preview.src}
+        alt={preview.alt}
+      />
+
       <div className={styles.itemTextContent}>
         <h3 className={classNames('h3', styles.itemName)}>{name}</h3>
 
         <p className={styles.itemDescription}>{description}</p>
 
-        <a className={styles.itemDownload} href={pdfLink} download>
-          Скачать (PDF)
-        </a>
-      </div>
+        <div className={styles.itemLinks}>
+          <a className={styles.itemLink} href={pdfSrc} onClick={handlePreviewClick}>
+            Читать онлайн
+          </a>
 
-      <a
-        className={styles.itemPreviewPhotoWrapper}
-        href={pdfLink}
-        onClick={handlePreviewClick}
-      >
-        <img
-          className={styles.itemPreviewPhoto}
-          src={preview.src}
-          alt={preview.alt}
-        />
-      </a>
+          <a className={styles.itemLink} href={pdfSrc} download={name}>
+            Скачать (PDF)
+          </a>
+        </div>
+      </div>
 
       <Drawer
         title={name}
         isOpen={isViewerOpen}
         onClose={closeViewer}
       >
-        <div className={styles.itemPhotos}>
-          {images.map((image) => (
-            <img key={image.src} src={image.src} alt={image.alt} />
+        <ul className={classNames(styles.itemPhotos, styles.itemPhotosCompact)}>
+          {compact.images.map((image) => (
+            <li
+              key={image.src}
+              className={styles.itemPhoto}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+              />
+            </li>
           ))}
-        </div>
+        </ul>
+
+        <ul className={classNames(styles.itemPhotos, styles.itemPhotosFull)}>
+          {images.map((image) => (
+            <li
+              key={image.src}
+              className={styles.itemPhoto}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+              />
+            </li>
+          ))}
+        </ul>
       </Drawer>
     </li>
   );

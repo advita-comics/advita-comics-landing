@@ -2,7 +2,7 @@
 
 .button {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   min-width: 100px;
   padding: 0.8em 1em;
   text-align: center;
@@ -11,7 +11,7 @@
   line-height: 1.2;
   border: 0;
   background-color: transparent;
-  transition: color, background-color 0.38s ease;
+  transition: color 0.38s ease, background-color 0.38s ease;
   cursor: pointer;
 }
 
@@ -20,17 +20,17 @@
 }
 
 .button_primary {
-  color: white;
+  color: var(--bunker-color-800);
   background-color: var(--viridian-green-color);
 }
 
 .button_primary:hover {
-  color: var(--viridian-green-color-100);
+  color: var(--bunker-color-900);
   background-color: var(--viridian-green-color-700);
 }
 
 .button_primary:focus {
-  color: var(--viridian-green-color-200);
+  color: var(--bunker-color-900);
   background-color: var(--viridian-green-color-800);
 }
 

@@ -2,111 +2,130 @@
 
 .section {
   width: 100%;
-  padding-top: 3em;
-  padding-bottom: 3em;
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
   background-color: var(--bunker-color);
   color: white;
 }
 
 .title {
   text-align: center;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
-.banner {
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  margin-bottom: var(--space-lg);
-}
-
-.subtitle {
-  margin: 0;
-  color: var(--bunker-color-200);
-  margin-bottom: var(--space-lg);
-}
-
-.learnMore {
-  color: white;
-  text-decoration: underline;
-}
-
-.learnMore:hover,
-.learnMore:focus {
-  text-decoration: none;
-}
-
-.progress {
+.bannerColumn {
+  grid-column: col-start / span 12;
   width: 100%;
   margin-bottom: var(--space-md);
 }
 
-.donationStatisticContainer {
-  margin-bottom: var(--space-lg);
-  padding: 1em 0.5em;
+.donationInfoColumn {
+  grid-column: col-start / span 12;
+}
+
+.donationInfo {
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm);
   color: var(--bunker-color);
   background-color: white;
 }
 
-.donationStatistic {
+.donationInfoTitle {
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.donationInfoProgress {
+  width: 100%;
+  margin-bottom: var(--space-md);
+}
+
+.donationInfoTable {
   width: 100%;
   table-layout: fixed;
   border-spacing: 0;
   border-collapse: collapse;
 }
 
-.donationStatisticHead {
+.donationInfoTerm,
+.donationInfoDesc {
   vertical-align: top;
+  text-align: center;
+  padding: 0;
+}
+
+.donationInfoTerm {
   font-weight: 700;
-  font-size: 1.15em;
-  text-align: center;
-  padding: 0.3em;
 }
 
-.donationStatisticInfo {
-  vertical-align: top;
+.donationInfoDesc {
   font-size: 0.9em;
-  text-align: center;
-  padding: 0.3em;
 }
 
-.backProject {
+.projectDesc {
+  margin: 0;
+  margin-bottom: var(--space-md);
+  color: var(--bunker-color-200);
+  font-size: 0.9em;
+}
+
+.projectDescLink {
+  color: white;
+  text-decoration: underline;
+}
+
+.projectDescLink:hover,
+.projectDescLink:focus {
+  text-decoration: none;
+}
+
+.backProjectBtn {
   width: 100%;
 }
 
-@media (--mq-small) {
-  .backProject {
-    width: auto;
-  }
-}
-
 @media (--mq-medium) {
-  .sectionColumns {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+  .section {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+
+  .title {
     margin-bottom: var(--space-lg);
   }
 
-  .subtitle {
+  .sectionColumns {
+    align-items: flex-start;
+    column-gap: var(--space-lg);
     margin-bottom: 0;
-    margin-right: var(--space-lg);
-    width: calc(55% - var(--space-lg));
   }
 
-  .donationStatisticContainer {
+  .bannerColumn {
+    grid-column: col-start / span 8;
     margin-bottom: 0;
-    width: 45%;
-    padding: 2em 1em;
+  }
+
+  .donationInfoColumn {
+    grid-column: col-start 9 / span 4;
   }
 }
 
 @media (--mq-large) {
-  .subtitle {
-    width: calc(60% - var(--space-lg));
+  .donationInfo {
+    padding: var(--space-md);
   }
 
-  .donationStatisticContainer {
-    width: 40%;
+  .projectDesc {
+    margin-bottom: var(--space-lg);
+  }
+}
+
+@media (--mq-xlarge) {
+  .section {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+
+  .title {
+    margin-bottom: var(--space-xl);
   }
 }

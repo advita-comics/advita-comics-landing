@@ -1,22 +1,23 @@
 @import 'styles/variables';
 
 .container {
-  margin-left: 4%;
-  margin-right: 4%;
+  width: 100%;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
 
   @media (--mq-medium) {
-    margin-left: 8%;
-    margin-right: 8%;
+    max-width: 992px;
   }
 
   @media (--mq-large) {
-    margin-left: 12%;
-    margin-right: 12%;
+    max-width: 1140px;
   }
 
   @media (--mq-xlarge) {
-    margin-left: 18%;
-    margin-right: 18%;
+    max-width: 1320px;
   }
 }
 

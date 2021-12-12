@@ -25,7 +25,7 @@
   --viridian-green-color-600: rgb(0, 173, 181);
   --viridian-green-color-700: rgb(0, 146, 153);
   --viridian-green-color-800: rgb(0, 97, 102);
-  --viridian-green-color-900: RGB(0, 49, 51);
+  --viridian-green-color-900: rgb(0, 49, 51);
 
   --cloud-burst-color: rgb(57, 62, 70);
   --whisper-color: rgb(238, 238, 238);
@@ -37,14 +37,15 @@
   --space-sm: 8px;
   --space-md: 16px;
   --space-lg: 32px;
-  --space-xl: 64px;
-  --space-xxl: 128px;
+  --space-xl: 48px;
+  --space-xxl: 64px;
+  --space-xxxl: 128px;
 }
 
 @custom-media --mq-small (min-width: 48em);
 @custom-media --mq-small-max (max-width: 47.9375em);
 @custom-media --mq-medium (min-width: 64em);
-@custom-media --mq-large (min-width: 85.375em);
+@custom-media --mq-large (min-width: 75em);
 @custom-media --mq-xlarge (min-width: 120em);
 @custom-media --mq-xxlarge (min-width: 160em);
 @custom-media --mq-retina (-webkit-min-device-pixel-ratio: 2),

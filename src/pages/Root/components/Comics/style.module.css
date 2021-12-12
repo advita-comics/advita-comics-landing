@@ -2,8 +2,10 @@
 
 .section {
   width: 100%;
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+  color: var(--bunker-color);
+  background-color: white;
 }
 
 .title {
@@ -22,26 +24,30 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  margin-bottom: var(--space-xl);
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-.sharePageViaSocial {
-  justify-content: center;
-}
-
-@media (--mq-small) {
+@media (--mq-medium) {
   .section {
-    float: left;
-    width: 60%;
-    padding-left: var(--space-md);
-    padding-right: var(--space-md);
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+
+  .comicList {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-right: calc(var(--space-lg) * -1);
+    margin-bottom: calc(var(--space-lg) * -1);
   }
 }
 
-@media (--mq-large) {
+@media (--mq-xlarge) {
   .section {
-    width: 65%;
-    padding-left: var(--space-lg);
-    padding-right: var(--space-lg);
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
   }
 }

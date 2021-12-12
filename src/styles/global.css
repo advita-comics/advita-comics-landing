@@ -35,21 +35,9 @@ body {
   text-rendering: optimizeSpeed;
   background-color: white;
 
-  @media (--mq-medium) {
+  @media (--mq-xlarge) {
     font-size: calc(var(--base-font-size) * 1.2);
     line-height: calc(var(--base-line-height) * 1.2);
-  }
-
-  @media (--mq-large) {
-    font-size: calc(var(--base-font-size) * 1.3);
-  }
-
-  @media (--mq-xlarge) {
-    font-size: calc(var(--base-font-size) * 1.4);
-  }
-
-  @media (--mq-xxlarge) {
-    font-size: calc(var(--base-font-size) * 1.6);
   }
 }
 

@@ -1,6 +1,5 @@
 import React from 'react';
-import { H2 } from 'components/ui/Typography';
-import SharePageViaSocial from 'components/shared/SharePageViaSocial';
+import classNames from 'classnames';
 import COMICS from 'data/comics';
 import ComicItem from './components/ComicItem';
 import styles from './style.module.css';
@@ -9,12 +8,13 @@ function Comics() {
   return (
     <section className={styles.section}>
       <div className="container">
-        <H2 className={styles.title}>Выбери свою историю!</H2>
+        <h2 className={classNames('h2', styles.title)}>
+          Выбери свою историю!
+        </h2>
 
         <p className={styles.subtitle}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus
-          mauris, viverra et dapibus ut, ornare sed neque. Vestibulum ante ipsum
-          primis in faucibus orci luctus
+          Ниже три комикса, которые заканчиваются как раз на том месте,
+          где должен появится ты. Посмотри - какой комикс выберешь!?
         </p>
 
         <ul className={styles.comicList}>
@@ -22,8 +22,6 @@ function Comics() {
             <ComicItem key={comic.id} comic={comic} />
           ))}
         </ul>
-
-        <SharePageViaSocial className={styles.sharePageViaSocial} />
       </div>
     </section>
   );

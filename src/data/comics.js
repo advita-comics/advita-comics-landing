@@ -1,51 +1,67 @@
-import cassiaPreview from './assets/cassia/preview.jpg';
-import foxPreview from './assets/fox/preview.jpg';
-import oChicksPreview from './assets/o-chicks/preview.jpg';
+import cassiaPdf from 'media/documents/cassia.pdf';
+import cassiaPreview from 'media/images/cassia/preview.jpg';
+import cassiaPage1 from 'media/images/cassia/01.jpg';
+import cassiaPage2 from 'media/images/cassia/02.jpg';
+import cassiaPage3 from 'media/images/cassia/03.jpg';
+import cassiaPage4 from 'media/images/cassia/04.jpg';
+import cassiaPage5 from 'media/images/cassia/05.jpg';
+import cassiaPage6 from 'media/images/cassia/06.jpg';
+import cassiaPage7 from 'media/images/cassia/07.jpg';
+import cassiaPage8 from 'media/images/cassia/08.jpg';
+import cassiaPage9 from 'media/images/cassia/09.jpg';
+import cassiaPage10 from 'media/images/cassia/10.jpg';
+import cassiaPage11 from 'media/images/cassia/11.jpg';
+import cassiaPage12 from 'media/images/cassia/12.jpg';
+import cassiaPage13 from 'media/images/cassia/13.jpg';
+import cassiaPage14 from 'media/images/cassia/14.jpg';
 
-import cphoto1 from './assets/cassia/01.jpg';
-import cphoto2 from './assets/cassia/02.jpg';
-import cphoto3 from './assets/cassia/03.jpg';
-import cphoto4 from './assets/cassia/04.jpg';
-import cphoto5 from './assets/cassia/05.jpg';
-import cphoto6 from './assets/cassia/06.jpg';
-import cphoto7 from './assets/cassia/07.jpg';
-import cphoto8 from './assets/cassia/08.jpg';
-import cphoto9 from './assets/cassia/09.jpg';
-import cphoto10 from './assets/cassia/10.jpg';
-import cphoto11 from './assets/cassia/11.jpg';
-import cphoto12 from './assets/cassia/12.jpg';
-import cphoto13 from './assets/cassia/13.jpg';
-import cphoto14 from './assets/cassia/14.jpg';
+import cassiaCompactPreview from 'media/images/cassia-compact/preview.jpg';
+import cassiaCompactPage1 from 'media/images/cassia-compact/01.jpg';
+import cassiaCompactPage2 from 'media/images/cassia-compact/02.jpg';
+import cassiaCompactPage3 from 'media/images/cassia-compact/03.jpg';
+import cassiaCompactPage4 from 'media/images/cassia-compact/04.jpg';
+import cassiaCompactPage5 from 'media/images/cassia-compact/05.jpg';
+import cassiaCompactPage6 from 'media/images/cassia-compact/06.jpg';
+import cassiaCompactPage7 from 'media/images/cassia-compact/07.jpg';
+import cassiaCompactPage8 from 'media/images/cassia-compact/08.jpg';
+import cassiaCompactPage9 from 'media/images/cassia-compact/09.jpg';
+import cassiaCompactPage10 from 'media/images/cassia-compact/10.jpg';
+import cassiaCompactPage11 from 'media/images/cassia-compact/11.jpg';
+import cassiaCompactPage12 from 'media/images/cassia-compact/12.jpg';
+import cassiaCompactPage13 from 'media/images/cassia-compact/13.jpg';
+import cassiaCompactPage14 from 'media/images/cassia-compact/14.jpg';
+import cassiaCompactPage15 from 'media/images/cassia-compact/15.jpg';
+import cassiaCompactPage16 from 'media/images/cassia-compact/16.jpg';
 
-import fphoto1 from './assets/fox/01.jpg';
-import fphoto2 from './assets/fox/02.jpg';
-import fphoto3 from './assets/fox/03.jpg';
-import fphoto4 from './assets/fox/04.jpg';
-import fphoto5 from './assets/fox/05.jpg';
-import fphoto6 from './assets/fox/06.jpg';
-import fphoto7 from './assets/fox/07.jpg';
-import fphoto8 from './assets/fox/08.jpg';
-import fphoto9 from './assets/fox/09.jpg';
-import fphoto10 from './assets/fox/10.jpg';
-import fphoto11 from './assets/fox/11.jpg';
-import fphoto12 from './assets/fox/12.jpg';
+import foxPdf from 'media/documents/fox.pdf';
+import foxPreview from 'media/images/fox/preview.jpg';
+import foxPage1 from 'media/images/fox/01.jpg';
+import foxPage2 from 'media/images/fox/02.jpg';
+import foxPage3 from 'media/images/fox/03.jpg';
+import foxPage4 from 'media/images/fox/04.jpg';
+import foxPage5 from 'media/images/fox/05.jpg';
+import foxPage6 from 'media/images/fox/06.jpg';
+import foxPage7 from 'media/images/fox/07.jpg';
+import foxPage8 from 'media/images/fox/08.jpg';
+import foxPage9 from 'media/images/fox/09.jpg';
+import foxPage10 from 'media/images/fox/10.jpg';
+import foxPage11 from 'media/images/fox/11.jpg';
+import foxPage12 from 'media/images/fox/12.jpg';
 
-import ophoto1 from './assets/o-chicks/01.jpg';
-import ophoto2 from './assets/o-chicks/02.jpg';
-import ophoto3 from './assets/o-chicks/03.jpg';
-import ophoto4 from './assets/o-chicks/04.jpg';
-import ophoto5 from './assets/o-chicks/05.jpg';
-import ophoto6 from './assets/o-chicks/06.jpg';
-import ophoto7 from './assets/o-chicks/07.jpg';
-import ophoto8 from './assets/o-chicks/08.jpg';
-import ophoto9 from './assets/o-chicks/09.jpg';
-import ophoto10 from './assets/o-chicks/10.jpg';
-import ophoto11 from './assets/o-chicks/11.jpg';
-import ophoto12 from './assets/o-chicks/12.jpg';
-
-import cphotoV21 from './assets/cassia-v2/01.jpg';
-import cphotoV22 from './assets/cassia-v2/02.jpg';
-import cphotoV23 from './assets/cassia-v2/03.jpg';
+import oChicksPdf from 'media/documents/o-chicks.pdf';
+import oChicksPreview from 'media/images/o-chicks/preview.jpg';
+import oChicksPage1 from 'media/images/o-chicks/01.jpg';
+import oChicksPage2 from 'media/images/o-chicks/02.jpg';
+import oChicksPage3 from 'media/images/o-chicks/03.jpg';
+import oChicksPage4 from 'media/images/o-chicks/04.jpg';
+import oChicksPage5 from 'media/images/o-chicks/05.jpg';
+import oChicksPage6 from 'media/images/o-chicks/06.jpg';
+import oChicksPage7 from 'media/images/o-chicks/07.jpg';
+import oChicksPage8 from 'media/images/o-chicks/08.jpg';
+import oChicksPage9 from 'media/images/o-chicks/09.jpg';
+import oChicksPage10 from 'media/images/o-chicks/10.jpg';
+import oChicksPage11 from 'media/images/o-chicks/11.jpg';
+import oChicksPage12 from 'media/images/o-chicks/12.jpg';
 
 const COMICS = [
   {
@@ -54,67 +70,139 @@ const COMICS = [
     description: 'Вестийка Кассия, бежавшая с разоренной родной планеты,  много лет живет на Земле. Она давно освоилась и даже завела кота. Но прошлое не отпускает: вслед за ночными кошмарами в жизнь инопланетянки ворвался загадочный человек в черном и потребовал отдать волшебный кристалл. Злодей захватил власть в городе и устроил настоящую охоту, теперь Кассии как никогда нужна помощь.',
     preview: {
       src: cassiaPreview,
-      alt: 'Cassia solves the world',
+      alt: 'Кассия. Чертоги Разума. История Любы Волковой.',
     },
-    pdfLink: '/comics/cassia.pdf',
+    pdfSrc: cassiaPdf,
     images: [
       {
-        src: cphoto1,
+        src: cassiaPage1,
         alt: '',
       },
       {
-        src: cphoto2,
+        src: cassiaPage2,
         alt: '',
       },
       {
-        src: cphoto3,
+        src: cassiaPage3,
         alt: '',
       },
       {
-        src: cphoto4,
+        src: cassiaPage4,
         alt: '',
       },
       {
-        src: cphoto5,
+        src: cassiaPage5,
         alt: '',
       },
       {
-        src: cphoto6,
+        src: cassiaPage6,
         alt: '',
       },
       {
-        src: cphoto7,
+        src: cassiaPage7,
         alt: '',
       },
       {
-        src: cphoto8,
+        src: cassiaPage8,
         alt: '',
       },
       {
-        src: cphoto9,
+        src: cassiaPage9,
         alt: '',
       },
       {
-        src: cphoto10,
+        src: cassiaPage10,
         alt: '',
       },
       {
-        src: cphoto11,
+        src: cassiaPage11,
         alt: '',
       },
       {
-        src: cphoto12,
+        src: cassiaPage12,
         alt: '',
       },
       {
-        src: cphoto13,
+        src: cassiaPage13,
         alt: '',
       },
       {
-        src: cphoto14,
+        src: cassiaPage14,
         alt: '',
       },
     ],
+    compact: {
+      preview: {
+        src: cassiaCompactPreview,
+        alt: 'Кассия. Чертоги Разума. История Любы Волковой.',
+      },
+      images: [
+        {
+          src: cassiaCompactPage1,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage2,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage3,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage4,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage5,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage6,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage7,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage8,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage9,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage10,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage11,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage12,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage13,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage14,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage15,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage16,
+          alt: '',
+        },
+      ],
+    },
   },
 
   {
@@ -123,59 +211,62 @@ const COMICS = [
     description: 'Городок рядом с прииском Сильвервилль в серьезной опасности: шахтеры взрывами динамита разбудили древнее зло, спавшее под землей. Полчища упырей ринулись убивать мирных жителей. Противостоять им может только лихая ковбойша Алика Фокс, которой уже приходилось вступать в бой с нечистью. Но одной ей не справиться.',
     preview: {
       src: foxPreview,
-      alt: 'Fox solves the city',
+      alt: 'Алика Фокс. Огненный Демон. История Алины Демченко.',
     },
-    pdfLink: '/comics/fox.pdf',
+    pdfSrc: foxPdf,
     images: [
       {
-        src: fphoto1,
+        src: foxPage1,
         alt: '',
       },
       {
-        src: fphoto2,
+        src: foxPage2,
         alt: '',
       },
       {
-        src: fphoto3,
+        src: foxPage3,
         alt: '',
       },
       {
-        src: fphoto4,
+        src: foxPage4,
         alt: '',
       },
       {
-        src: fphoto5,
+        src: foxPage5,
         alt: '',
       },
       {
-        src: fphoto6,
+        src: foxPage6,
         alt: '',
       },
       {
-        src: fphoto7,
+        src: foxPage7,
         alt: '',
       },
       {
-        src: fphoto8,
+        src: foxPage8,
         alt: '',
       },
       {
-        src: fphoto9,
+        src: foxPage9,
         alt: '',
       },
       {
-        src: fphoto10,
+        src: foxPage10,
         alt: '',
       },
       {
-        src: fphoto11,
+        src: foxPage11,
         alt: '',
       },
       {
-        src: fphoto12,
+        src: foxPage12,
         alt: '',
       },
     ],
+    compact: {
+      images: [],
+    },
   },
 
   {
@@ -184,84 +275,62 @@ const COMICS = [
     description: 'Хомяк О`Чикс живет двойной жизнью: днем он домашний любимец, а по ночам перевоплощается в маленького детектива и ловит преступников. Однажды ночью начальник полиции Павел Сергеевич срочно вызывает детектива: катастрофа! Был украден новейший лазер, с помощью которого можно вскрывать любые двери. Преступников надо поймать к утру!',
     preview: {
       src: oChicksPreview,
-      alt: 'O chicks solves the city',
+      alt: 'Детектив О`Чикс. История Ани Осокиной.',
     },
-    pdfLink: '/comics/o-chicks.pdf',
+    pdfSrc: oChicksPdf,
     images: [
       {
-        src: ophoto1,
+        src: oChicksPage1,
         alt: '',
       },
       {
-        src: ophoto2,
+        src: oChicksPage2,
         alt: '',
       },
       {
-        src: ophoto3,
+        src: oChicksPage3,
         alt: '',
       },
       {
-        src: ophoto4,
+        src: oChicksPage4,
         alt: '',
       },
       {
-        src: ophoto5,
+        src: oChicksPage5,
         alt: '',
       },
       {
-        src: ophoto6,
+        src: oChicksPage6,
         alt: '',
       },
       {
-        src: ophoto7,
+        src: oChicksPage7,
         alt: '',
       },
       {
-        src: ophoto8,
+        src: oChicksPage8,
         alt: '',
       },
       {
-        src: ophoto9,
+        src: oChicksPage9,
         alt: '',
       },
       {
-        src: ophoto10,
+        src: oChicksPage10,
         alt: '',
       },
       {
-        src: ophoto11,
+        src: oChicksPage11,
         alt: '',
       },
       {
-        src: ophoto12,
+        src: oChicksPage12,
         alt: '',
       },
     ],
-  },
-
-  {
-    id: 4,
-    name: 'Кассия. Чертоги Разума V2',
-    description: 'Вестийка Кассия, бежавшая с разоренной родной планеты,  много лет живет на Земле. Она давно освоилась и даже завела кота. Но прошлое не отпускает: вслед за ночными кошмарами в жизнь инопланетянки ворвался загадочный человек в черном и потребовал отдать волшебный кристалл. Злодей захватил власть в городе и устроил настоящую охоту, теперь Кассии как никогда нужна помощь.',
-    preview: {
-      src: cphotoV21,
-      alt: 'Cassia solves the world',
+    compact: {
+      images: [],
     },
-    pdfLink: '/comics/cassia-v2.pdf',
-    images: [
-      {
-        src: cphotoV21,
-        alt: '',
-      },
-      {
-        src: cphotoV22,
-        alt: '',
-      },
-      {
-        src: cphotoV23,
-        alt: '',
-      },
-    ],
   },
 ];
 

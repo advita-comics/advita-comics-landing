@@ -16,7 +16,11 @@ const ComicType = exact({
   description: string,
   preview: ImageType,
   images: arrayOf(ImageType),
-  pdfLink: string,
+  pdfSrc: string,
+  compact: exact({
+    preview: ImageType,
+    images: arrayOf(ImageType),
+  }),
 });
 
 export {

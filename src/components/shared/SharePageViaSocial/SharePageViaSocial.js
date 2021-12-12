@@ -30,7 +30,7 @@ function SharePageViaSocial(props) {
           className={styles.socialButton}
           resetButtonStyle={false}
         >
-          <span className="visually-hidden">Share using Facebook</span>
+          <span className="visually-hidden">Поделиться используя Facebook</span>
           <FacebookIcon />
         </FacebookShareButton>
       </li>
@@ -43,7 +43,7 @@ function SharePageViaSocial(props) {
           className={styles.socialButton}
           resetButtonStyle={false}
         >
-          <span className="visually-hidden">Share using Mail.ru</span>
+          <span className="visually-hidden">Поделиться используя Mail.ru</span>
           <MailruIcon />
         </MailruShareButton>
       </li>
@@ -56,7 +56,7 @@ function SharePageViaSocial(props) {
           className={styles.socialButton}
           resetButtonStyle={false}
         >
-          <span className="visually-hidden">Share using Odnoklassniki</span>
+          <span className="visually-hidden">Поделиться используя Odnoklassniki</span>
           <OKIcon />
         </OKShareButton>
       </li>
@@ -67,7 +67,7 @@ function SharePageViaSocial(props) {
           className={styles.socialButton}
           resetButtonStyle={false}
         >
-          <span className="visually-hidden">Share using Telegram</span>
+          <span className="visually-hidden">Поделиться используя Telegram</span>
           <TelegramIcon />
         </TelegramShareButton>
       </li>
@@ -78,7 +78,7 @@ function SharePageViaSocial(props) {
           className={styles.socialButton}
           resetButtonStyle={false}
         >
-          <span className="visually-hidden">Share using Twitter</span>
+          <span className="visually-hidden">Поделиться используя Twitter</span>
           <TwitterIcon />
         </TwitterShareButton>
       </li>
@@ -89,7 +89,7 @@ function SharePageViaSocial(props) {
           className={styles.socialButton}
           resetButtonStyle={false}
         >
-          <span className="visually-hidden">Share using Vk</span>
+          <span className="visually-hidden">Поделиться используя Vk</span>
           <VKIcon />
         </VKShareButton>
       </li>

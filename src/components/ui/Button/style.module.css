@@ -3,7 +3,7 @@
 .button {
   box-sizing: border-box;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   min-width: 100px;
   padding: 0;
 
@@ -15,7 +15,7 @@
   border: 0;
   background-color: transparent;
 
-  transition: color, background-color 0.38s ease;
+  transition: color 0.38s ease, background-color 0.38s ease;
   cursor: pointer;
 }
 
