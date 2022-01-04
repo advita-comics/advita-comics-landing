@@ -63,6 +63,26 @@ import oChicksPage10 from 'media/images/o-chicks/10.jpg';
 import oChicksPage11 from 'media/images/o-chicks/11.jpg';
 import oChicksPage12 from 'media/images/o-chicks/12.jpg';
 
+import oChicksCompactPreview from 'media/images/o-chicks-compact/preview.jpg';
+import oChicksCompactPage1 from 'media/images/o-chicks-compact/01.jpg';
+import oChicksCompactPage2 from 'media/images/o-chicks-compact/02.jpg';
+import oChicksCompactPage3 from 'media/images/o-chicks-compact/03.jpg';
+import oChicksCompactPage4 from 'media/images/o-chicks-compact/04.jpg';
+import oChicksCompactPage5 from 'media/images/o-chicks-compact/05.jpg';
+import oChicksCompactPage6 from 'media/images/o-chicks-compact/06.jpg';
+import oChicksCompactPage7 from 'media/images/o-chicks-compact/07.jpg';
+import oChicksCompactPage8 from 'media/images/o-chicks-compact/08.jpg';
+import oChicksCompactPage9 from 'media/images/o-chicks-compact/09.jpg';
+import oChicksCompactPage10 from 'media/images/o-chicks-compact/10.jpg';
+import oChicksCompactPage11 from 'media/images/o-chicks-compact/11.jpg';
+import oChicksCompactPage12 from 'media/images/o-chicks-compact/12.jpg';
+import oChicksCompactPage13 from 'media/images/o-chicks-compact/13.jpg';
+import oChicksCompactPage14 from 'media/images/o-chicks-compact/14.jpg';
+import oChicksCompactPage15 from 'media/images/o-chicks-compact/15.jpg';
+import oChicksCompactPage16 from 'media/images/o-chicks-compact/16.jpg';
+import oChicksCompactPage17 from 'media/images/o-chicks-compact/17.jpg';
+import oChicksCompactPage18 from 'media/images/o-chicks-compact/18.jpg';
+
 const COMICS = [
   {
     id: 1,
@@ -329,7 +349,84 @@ const COMICS = [
       },
     ],
     compact: {
-      images: [],
+      preview: {
+        src: oChicksCompactPreview,
+        alt: 'Детектив О`Чикс. История Ани Осокиной.',
+      },
+      images: [
+        {
+          src: oChicksCompactPage1,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage2,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage3,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage4,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage5,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage6,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage7,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage8,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage9,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage10,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage11,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage12,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage13,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage14,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage15,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage16,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage17,
+          alt: '',
+        },
+        {
+          src: oChicksCompactPage18,
+          alt: '',
+        },
+      ],
     },
   },
 ];
