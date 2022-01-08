@@ -187,6 +187,52 @@ function DonationDetails(props) {
           }
 
           {
+            isHeroFieldAllowed('characterGender') && (
+              <fieldset
+                className={classNames(
+                  styles.fieldset,
+                  styles.donationDetailsCharacterGender,
+                  styles.donationDetailsItem,
+                )}
+              >
+                <legend className={styles.legend}>
+                  Пол вашего персонажа:
+                </legend>
+
+                <ul className={styles.radioList}>
+                  <RadioInput
+                    {...register('characterGender', {
+                      required: 'Поле "Пол персонажа" является обязательным.',
+                    })}
+                    value="0"
+                    id="donation-details-character-gender-0"
+                    label="Мужской"
+                    containerComponent="li"
+                    containerClassName={styles.radioListOption}
+                  />
+
+                  <RadioInput
+                    {...register('characterGender', {
+                      required: 'Поле "Пол персонажа" является обязательным.',
+                    })}
+                    value="1"
+                    id="donation-details-character-gender-1"
+                    label="Женский"
+                    containerComponent="li"
+                    containerClassName={styles.radioListOption}
+                  />
+                </ul>
+
+                {errors.characterGender?.message && (
+                  <aside className={styles.fieldsetErrorMessage}>
+                    {errors.characterGender?.message}
+                  </aside>
+                )}
+              </fieldset>
+            )
+          }
+
+          {
             isHeroFieldAllowed('costumeColor') && (
               <NativeSelect
                 {...register('costumeColor', {
@@ -231,52 +277,6 @@ function DonationDetails(props) {
                 <NativeSelect.Option value="brown">Коричневый</NativeSelect.Option>
                 <NativeSelect.Option value="yellow">Желтый</NativeSelect.Option>
               </NativeSelect>
-            )
-          }
-
-          {
-            isHeroFieldAllowed('characterGender') && (
-              <fieldset
-                className={classNames(
-                  styles.fieldset,
-                  styles.donationDetailsCharacterGender,
-                  styles.donationDetailsItem,
-                )}
-              >
-                <legend className={styles.legend}>
-                  Пол вашего персонажа:
-                </legend>
-
-                <ul className={styles.radioList}>
-                  <RadioInput
-                    {...register('characterGender', {
-                      required: 'Поле "Пол персонажа" является обязательным.',
-                    })}
-                    value="0"
-                    id="donation-details-character-gender-0"
-                    label="Мужской"
-                    containerComponent="li"
-                    containerClassName={styles.radioListOption}
-                  />
-
-                  <RadioInput
-                    {...register('characterGender', {
-                      required: 'Поле "Пол персонажа" является обязательным.',
-                    })}
-                    value="1"
-                    id="donation-details-character-gender-1"
-                    label="Женский"
-                    containerComponent="li"
-                    containerClassName={styles.radioListOption}
-                  />
-                </ul>
-
-                {errors.characterGender?.message && (
-                  <aside className={styles.fieldsetErrorMessage}>
-                    {errors.characterGender?.message}
-                  </aside>
-                )}
-              </fieldset>
             )
           }
         </div>
