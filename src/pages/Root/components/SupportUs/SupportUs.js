@@ -1,77 +1,45 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { H2 } from 'components/ui/Typography';
-import Button from 'components/ui/Button';
-import Box from 'components/ui/Box';
-import RadioInputGroup from 'components/ui/RadioInputGroup';
-import COMICS from 'data/comics';
+import classNames from 'classnames';
+import RadioInput from 'components/ui/RadioInput';
 import DONATION_VARIANTS from 'data/donationVariants';
-import DonationDetailsInputs from './components/DonationDetailsInputs';
-import donationSchema from './donationSchema';
+import DonationDetails from './components/DonationDetails';
 import styles from './style.module.css';
 
+function findDonationVariant(id) {
+  return DONATION_VARIANTS.find((variant) => variant.id === Number(id));
+}
+
 function SupportUs() {
+  const formContext = useForm({
+    mode: 'onBlur',
+    defaultValues: {
+      // In order to show placeholder for selects
+      costumeColor: '',
+      hairColor: '',
+    },
+  });
+
   const {
     register,
-    watch,
     handleSubmit,
     setValue,
     formState: { errors },
-  } = useForm({
-    resolver: yupResolver(donationSchema),
-  });
-
-  const donationVariantIdProps = register('donationVariantId');
-  const donationAmountProps = register('donationAmount');
-
-  const donationVariantId = watch('donationVariantId');
-  const comicId = watch('comicId');
-
-  function findDonationVariant(id) {
-    return DONATION_VARIANTS.find((variant) => variant.id === Number(id));
-  }
+  } = formContext;
 
   function handleDonationVariantIdChange(event) {
-    donationVariantIdProps.onChange(event);
-
     const { target } = event;
     const donationVariant = findDonationVariant(target.value);
 
     if (donationVariant) {
       setValue('donationAmount', donationVariant.minAmount, {
         shouldValidate: true,
-        shouldDirty: true,
       });
     }
   }
 
-  function handleDonationAmountBlur(event) {
-    donationAmountProps.onBlur(event);
-
-    const { target } = event;
-    const donationVariant = findDonationVariant(donationVariantId);
-
-    if (target.value && donationVariant) {
-      const sortedDonationVariants = DONATION_VARIANTS.sort((a, b) => (
-        b.minAmount - a.minAmount
-      ));
-
-      const newDonationVariant = sortedDonationVariants.find((variant) => (
-        target.value >= variant.minAmount
-      ));
-
-      if (newDonationVariant) {
-        setValue('donationVariantId', String(newDonationVariant.id), {
-          shouldValidate: true,
-          shouldDirty: true,
-        });
-      }
-    }
-  }
-
-  const onSubmit = (values) => {
+  function onSubmit(values) {
     // eslint-disable-next-line no-console
     console.log(values);
 
@@ -98,84 +66,130 @@ function SupportUs() {
       requireEmail: true,
       data: widgetData,
     });
-  };
+  }
 
   return (
     <section className={styles.section} id="support-us">
       <div className="container">
-        <H2 className={styles.title}>Поддержи наших героев!</H2>
+        <h2 className={classNames('h2', styles.title)}>
+          Поддержи наших героев!
+        </h2>
 
         <p className={styles.subtitle}>
           Выбери историю, к продолжению которой ты присоединишься, и настрой
           элементы персонализации твоего героя.
         </p>
 
-        <form onSubmit={handleSubmit(onSubmit)} noValidate>
-          <Box className={styles.box}>
-            <RadioInputGroup
-              className={styles.fieldset}
-              errorMessage={errors.comicId?.message}
-            >
-              <RadioInputGroup.Legend className={styles.legend}>
-                Пожалуйста, выберете комикс:
-              </RadioInputGroup.Legend>
+        <form
+          className={styles.form}
+          onSubmit={handleSubmit(onSubmit)}
+          noValidate
+        >
+          <div className={styles.formColumns}>
+            <div className={classNames(styles.box, styles.formColumnsItem)}>
+              <fieldset
+                className={styles.fieldset}
+              >
+                <legend className={styles.legend}>
+                  1. Пожалуйста, выберите направление пожертвования:
+                </legend>
 
-              <RadioInputGroup.List className={styles.optionList}>
-                {COMICS.map((comic) => (
-                  <RadioInputGroup.Radio
-                    key={comic.id}
-                    {...register('comicId')}
-                    containerClassName={styles.option}
-                    name="comicId"
-                    value={String(comic.id)}
-                    id={`support-${comic.id}-comic-radio`}
-                    label={comic.name}
+                <ul className={styles.radioList}>
+                  <RadioInput
+                    {...register('donationDirectionId', {
+                      required: 'Поле "Направление пожертвования" является обязательным.',
+                    })}
+                    value="1"
+                    id="donation-direction-1-radio"
+                    label="Кассия. Чертоги Разума"
+                    containerComponent="li"
+                    containerClassName={styles.radioListOption}
                   />
-                ))}
-              </RadioInputGroup.List>
-            </RadioInputGroup>
-          </Box>
 
-          <Box className={styles.box}>
-            <RadioInputGroup
-              className={styles.fieldset}
-              errorMessage={errors.donationVariantId?.message}
-            >
-              <RadioInputGroup.Legend className={styles.legend}>
-                Пожалуйста, выберете вариант пожертвования:
-              </RadioInputGroup.Legend>
-
-              <RadioInputGroup.List className={styles.optionList}>
-                {DONATION_VARIANTS.map((donationVariant) => (
-                  <RadioInputGroup.Radio
-                    key={donationVariant.id}
-                    {...donationVariantIdProps}
-                    onChange={handleDonationVariantIdChange}
-                    containerClassName={styles.option}
-                    name="donationVariantId"
-                    value={String(donationVariant.id)}
-                    id={`support-${donationVariant.id}-donation-radio`}
-                    label={donationVariant.name}
+                  <RadioInput
+                    {...register('donationDirectionId', {
+                      required: 'Поле "Направление пожертвования" является обязательным.',
+                    })}
+                    value="2"
+                    id="donation-direction-2-radio"
+                    label="Алика Фокс. Огненный Демон"
+                    containerComponent="li"
+                    containerClassName={styles.radioListOption}
                   />
-                ))}
-              </RadioInputGroup.List>
-            </RadioInputGroup>
-          </Box>
 
-          <DonationDetailsInputs
-            donationVariant={findDonationVariant(donationVariantId)}
-            register={register}
-            hidden={!comicId || !donationVariantId}
-            errors={errors}
-            donationAmountProps={{
-              ...donationAmountProps,
-              onBlur: handleDonationAmountBlur,
-            }}
-          />
+                  <RadioInput
+                    {...register('donationDirectionId', {
+                      required: 'Поле "Направление пожертвования" является обязательным.',
+                    })}
+                    value="3"
+                    id="donation-direction-3-radio"
+                    label="Детектив О`Чикс"
+                    containerComponent="li"
+                    containerClassName={styles.radioListOption}
+                  />
 
-          <Button type="submit" variant="primary" className={styles.submitBtn}>
+                  <RadioInput
+                    {...register('donationDirectionId', {
+                      required: 'Поле "Направление пожертвования" является обязательным.',
+                    })}
+                    value="4"
+                    id="donation-direction-4-radio"
+                    label="Просто пожертвовать на проект"
+                    containerComponent="li"
+                    containerClassName={styles.radioListOption}
+                  />
+                </ul>
+
+                {errors.donationDirectionId?.message && (
+                  <aside className={styles.fieldsetErrorMessage}>
+                    {errors.donationDirectionId?.message}
+                  </aside>
+                )}
+              </fieldset>
+            </div>
+
+            <div className={classNames(styles.box, styles.formColumnsItem)}>
+              <fieldset
+                className={styles.fieldset}
+              >
+                <legend className={styles.legend}>
+                  2. Пожалуйста, выберите сумму пожертвования:
+                </legend>
+
+                <ul className={styles.radioList}>
+                  {DONATION_VARIANTS.map((donationVariant) => (
+                    <RadioInput
+                      key={donationVariant.id}
+                      {...register('donationVariantId', {
+                        required: 'Поле "Сумма пожертвования" является обязательным.',
+                        onChange: handleDonationVariantIdChange,
+                      })}
+                      value={String(donationVariant.id)}
+                      id={`donation-variant-${donationVariant.id}-radio`}
+                      label={donationVariant.name}
+                      containerComponent="li"
+                      containerClassName={styles.radioListOption}
+                    />
+                  ))}
+                </ul>
+
+                {errors.donationVariantId?.message && (
+                  <aside className={styles.fieldsetErrorMessage}>
+                    {errors.donationVariantId?.message}
+                  </aside>
+                )}
+              </fieldset>
+            </div>
+          </div>
+
+          <DonationDetails formContext={formContext} />
+
+          <button
+            type="submit"
+            className={classNames('button button_primary', styles.submitBtn)}
+          >
             Продолжить
-          </Button>
+          </button>
         </form>
       </div>
     </section>

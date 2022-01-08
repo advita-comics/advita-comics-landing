@@ -21,6 +21,9 @@ const config = {
     'postcss-preset-env': {
       stage: 0,
       preserve: false,
+      features: {
+        'focus-within-pseudo-class': false,
+      },
     },
     ...(process.env.NODE_ENV === 'production' ? plugins.production : {}),
   },

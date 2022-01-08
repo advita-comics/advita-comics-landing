@@ -1,28 +1,54 @@
 @import 'styles/variables';
 
-.inputPrimary .inputLabel {
+.input {
+  position: relative;
+}
+
+.inputLabel {
   display: inline-block;
   vertical-align: top;
-  color: var(--bunker-color);
+  line-height: 1.5;
   margin-bottom: var(--space-sm);
   cursor: pointer;
 }
 
-.inputPrimary .inputInner {
+.inputInner {
   display: block;
   width: 100%;
   max-width: 100%;
   font: inherit;
-  padding: 0.5em 0.8em;
-  border: 2px solid var(--bunker-color);
+  color: inherit;
+  padding: 0.5em 1em;
+  border: 2px solid;
   background-color: transparent;
+  transition: 280ms border-color 120ms ease-out, 280ms padding 120ms ease-out;
 }
 
-.inputPrimary .inputInner::placeholder {
+.inputColorBunker {
+  color: var(--bunker-color);
+}
+
+.inputColorBunker .inputInner {
+  border-color: var(--bunker-color);
+}
+
+.inputColorBunker .inputInner::placeholder {
   color: var(--bunker-color-700);
 }
 
-.inputPrimary .errorMessage {
-  color: var(--free-speech-red-color);
-  margin-top: var(--space-sm);
+.inputColorWhite {
+  color: white;
+}
+
+.inputColorWhite .inputInner::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input:focus-within .errorMessage {
+  opacity: 1;
+  z-index: 1;
+}
+
+.inputInvalid .inputInner {
+  border-color: var(--free-speech-red-color);
 }

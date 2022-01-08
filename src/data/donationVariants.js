@@ -1,37 +1,27 @@
 const DONATION_VARIANTS = [
   {
     id: 1,
-    name: '300 рублей или более',
-    description: [
-      '300 RUB and more If you close your eyes and listen carefully',
-      '– when the wind is calm, and the world is quiet',
-      "– you'll be able to feel us thanking you for your support.",
-    ].join(' '),
-    minAmount: 300,
+    name: '500 рублей и более',
+    description: 'Элементы персонализации героя: пол и имя.',
+    minAmount: 500,
   },
   {
     id: 2,
-    name: '400 рублей или более',
-    description: [
-      '400 RUB and more An easy-to-download digital copy of INFERNO GIRL RED. Plus:',
-      "– Your name in the 'Special Thanks' section.",
-    ].join(' '),
-    minAmount: 400,
+    name: '600 рублей и более',
+    description: 'Элементы персонализации героя: пол, имя, цвет волос.',
+    minAmount: 600,
   },
   {
     id: 3,
-    name: '1000 рублей или более',
-    description: [
-      '1000 RUB and more Lorem ipsum dolor sit amet dolor sit amet',
-      'This is a lorem ipsum super text, just ryba text',
-    ].join(' '),
-    minAmount: 1000,
+    name: '700 рублей и более',
+    description: 'Элементы персонализации героя: пол, имя, цвет волос, основной цвет одежды.',
+    minAmount: 700,
   },
   {
     id: 4,
-    name: 'Другую сумма',
-    description: 'Other sum Support the project for no reward, just because it speaks to you.',
-    minAmount: 1,
+    name: 'Другая сумма (не менее 10 рублей)',
+    description: 'Нет элементов персонализации героя.',
+    minAmount: 10,
   },
 ];
 

@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import styles from '../style.module.css';
 
 function Option(props) {
-  const { value, disabled, children } = props;
+  const {
+    value,
+    disabled,
+    children,
+  } = props;
 
   return (
     <option

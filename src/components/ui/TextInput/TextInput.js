@@ -1,35 +1,49 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { forwardRef } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { capitalizeFirstLetter } from 'helpers/strings/index';
+import humps from 'humps';
+import ErrorMessage from 'components/ui/ErrorMessage';
 import styles from './style.module.css';
 
 const TextInput = forwardRef((props, ref) => {
   const {
-    variant,
     id,
-    name,
-    label,
-    onChange,
-    onBlur,
-    value,
-    defaultValue,
-    containerClassName,
-    className,
-    labelClassName,
     htmlType,
-    inputMode,
-    placeholder,
-    min,
+    color,
+    className,
+    label,
+    labelClassName,
+    containerComponent,
+    containerClassName,
     errorMessage,
+    errorMessageClassName,
+    ...additionalNodeProps
   } = props;
 
   return (
     <props.containerComponent
-      className={classNames(styles.input, containerClassName, {
-        [styles[`input${capitalizeFirstLetter(variant)}`]]: variant,
-      })}
+      className={classNames(
+        styles.input,
+        containerClassName,
+        {
+          [styles[humps.camelize(`input-color-${color}`)]]: color,
+        },
+        {
+          [styles.inputInvalid]: Boolean(errorMessage),
+        },
+      )}
     >
+      {errorMessage && (
+        <ErrorMessage className={classNames(
+          styles.errorMessage,
+          errorMessageClassName,
+        )}
+        >
+          {errorMessage}
+        </ErrorMessage>
+      )}
+
       <label
         htmlFor={id}
         className={classNames(styles.inputLabel, labelClassName)}
@@ -40,59 +54,35 @@ const TextInput = forwardRef((props, ref) => {
       <input
         ref={ref}
         type={htmlType}
-        inputMode={inputMode}
         className={classNames(styles.inputInner, className)}
         id={id}
-        name={name}
-        onChange={onChange}
-        onBlur={onBlur}
-        value={value}
-        defaultValue={defaultValue}
-        placeholder={placeholder}
-        min={min}
+        {...additionalNodeProps}
       />
-
-      {errorMessage && <aside className={styles.errorMessage}>{errorMessage}</aside>}
     </props.containerComponent>
   );
 });
 
 TextInput.defaultProps = {
-  variant: 'primary',
-  name: undefined,
-  onChange: undefined,
-  onBlur: undefined,
-  value: undefined,
-  defaultValue: undefined,
-  containerComponent: 'div',
-  containerClassName: undefined,
-  className: undefined,
-  labelClassName: undefined,
   htmlType: 'text',
-  placeholder: undefined,
-  inputMode: undefined,
-  min: undefined,
-  errorMessage: undefined,
+  color: 'bunker',
+  className: '',
+  labelClassName: '',
+  containerComponent: 'div',
+  containerClassName: '',
+  errorMessageClassName: '',
+  errorMessage: null,
 };
 
 TextInput.propTypes = {
-  variant: PropTypes.oneOf(['primary']),
   id: PropTypes.string.isRequired,
-  name: PropTypes.string,
+  htmlType: PropTypes.string,
+  color: PropTypes.oneOf(['bunker', 'white']),
+  className: PropTypes.string,
   label: PropTypes.node.isRequired,
-  onChange: PropTypes.func,
-  onBlur: PropTypes.func,
-  value: PropTypes.string,
-  defaultValue: PropTypes.string,
-  // eslint-disable-next-line react/no-unused-prop-types
+  labelClassName: PropTypes.string,
   containerComponent: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
   containerClassName: PropTypes.string,
-  className: PropTypes.string,
-  labelClassName: PropTypes.string,
-  htmlType: PropTypes.string,
-  placeholder: PropTypes.string,
-  inputMode: PropTypes.string,
-  min: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  errorMessageClassName: PropTypes.string,
   errorMessage: PropTypes.node,
 };
 

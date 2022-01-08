@@ -1,6 +1,18 @@
 @import 'styles/variables';
 
 .select {
+  position: relative;
+}
+
+.selectLabel {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 1.5;
+  margin-bottom: var(--space-sm);
+  cursor: pointer;
+}
+
+.selectInner {
   appearance: none;
 
   text-indent: 0.01px;
@@ -9,57 +21,65 @@
 
   text-overflow: ellipsis;
 
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  width: auto;
+  display: block;
+  padding: 0.5em 1em;
+  padding-right: 3em;
+  width: 100%;
   max-width: 100%;
 
   font: inherit;
   color: inherit;
 
   background-color: transparent;
-  border-radius: 0;
-  border: 0;
+  border: 2px solid;
   box-shadow: none;
   cursor: pointer;
+
+  transition: 280ms border-color 120ms ease-out, 280ms padding 120ms ease-out;
+
+  background-repeat: no-repeat;
+  background-position: top 50% right 1em;
+  background-size: 1em;
 }
 
-.select:disabled {
+.selectInner:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.select::-ms-expand {
+.selectInner::-ms-expand {
   display: none;
 }
 
-.label {
-  cursor: pointer;
-}
-
-.option {
+.selectOption {
   font-weight: 400;
   /* Needed for windows */
   color: black;
 }
 
-.selectPrimary .label {
-  display: inline-block;
-  vertical-align: top;
+.selectColorBunker {
   color: var(--bunker-color);
-  margin-bottom: var(--space-sm);
-  cursor: pointer;
 }
 
-.selectPrimary .select {
-  display: block;
-  width: 100%;
-  padding: 0.5em 0.8em;
-  border: 2px solid var(--bunker-color);
+.selectColorBunker .selectInner {
+  border-color: var(--bunker-color);
+  background-image: url('./assets/down-arrow_bunker.svg');
 }
 
-.selectPrimary .errorMessage {
-  color: var(--free-speech-red-color);
-  margin-top: var(--space-sm);
+.selectColorWhite {
+  color: white;
+}
+
+.selectColorWhite .selectInner {
+  border-color: white;
+  background-image: url('./assets/down-arrow_white.svg');
+}
+
+.select:focus-within .errorMessage {
+  opacity: 1;
+  z-index: 1;
+}
+
+.selectInvalid .selectInner {
+  border-color: var(--free-speech-red-color);
 }

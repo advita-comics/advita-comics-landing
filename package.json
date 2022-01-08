@@ -72,7 +72,6 @@
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
-    "@hookform/resolvers": "^2.4.0",
     "classnames": "^2.2.6",
     "core-js": "^3.9.1",
     "cors": "^2.8.5",
@@ -95,7 +94,6 @@
     "react-share": "^4.4.0",
     "redux": "^4.1.1",
     "regenerator-runtime": "^0.13.7",
-    "superagent": "^6.1.0",
-    "yup": "^0.31.0"
+    "superagent": "^6.1.0"
   }
 }

@@ -50,7 +50,7 @@ function ProjectOverview() {
 
                   <tr>
                     <td className={styles.donationInfoDesc}>из 750 000 ₽</td>
-                    <td className={styles.donationInfoDesc}>Взносов</td>
+                    <td className={styles.donationInfoDesc}>Взносы</td>
                     <td className={styles.donationInfoDesc}>Дней прошло</td>
                   </tr>
                 </tbody>
@@ -74,7 +74,7 @@ function ProjectOverview() {
               className={classNames('button button_primary', styles.backProjectBtn)}
               href="#support-us"
             >
-              Поддержать проект сразу
+              Поддержать проект
             </a>
           </div>
         </div>

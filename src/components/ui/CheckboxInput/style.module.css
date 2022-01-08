@@ -1,19 +1,19 @@
 @import 'styles/variables';
 
-.checkboxPrimary .checkboxLabel {
+.checkbox {
+  position: relative;
+}
+
+.checkboxLabel {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  color: var(--bunker-color);
+  line-height: 1.5;
   padding-left: var(--space-lg);
   cursor: pointer;
-
-  @media (--mq-xlarge) {
-    padding-left: 48px;
-  }
 }
 
-.checkboxPrimary .checkboxIcon {
+.checkboxIcon {
   position: absolute;
   top: 50%;
   left: 0;
@@ -22,14 +22,9 @@
   border: 2px solid currentColor;
   background-color: transparent;
   transform: translateY(-50%);
-
-  @media (--mq-xlarge) {
-    width: 32px;
-    height: 32px;
-  }
 }
 
-.checkboxPrimary .checkboxIcon::before {
+.checkboxIcon::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -44,12 +39,7 @@
   opacity: 0;
 }
 
-.checkboxPrimary .checkboxLabel:hover,
-.checkboxPrimary .checkboxInput:focus + .checkboxLabel {
-  color: var(--bunker-color-700);
-}
-
-.checkboxPrimary .checkboxInput:focus + .checkboxLabel .checkboxIcon {
+.checkboxInput:focus + .checkboxLabel .checkboxIcon {
   outline-width: 2px;
   outline-style: solid;
   outline-color: Highlight;
@@ -60,6 +50,33 @@
   }
 }
 
-.checkboxPrimary .checkboxInput:checked + .checkboxLabel .checkboxIcon::before {
+.checkboxInput:checked + .checkboxLabel .checkboxIcon::before {
   opacity: 1;
+}
+
+.checkbox:focus-within .errorMessage {
+  opacity: 1;
+  z-index: 1;
+}
+
+.checkboxColorBunker {
+  color: var(--bunker-color);
+}
+
+.checkboxColorBunker .checkboxLabel:hover,
+.checkboxColorBunker .checkboxInput:focus + .checkboxLabel {
+  color: var(--bunker-color-700);
+}
+
+.checkboxColorWhite {
+  color: white;
+}
+
+.checkboxColorWhite .checkboxLabel:hover,
+.checkboxColorWhite .checkboxInput:focus + .checkboxLabel {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.checkboxInvalid .checkboxIcon {
+  border-color: var(--free-speech-red-color);
 }

@@ -2,8 +2,8 @@
 
 .section {
   width: 100%;
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
   color: white;
   background-color: var(--bunker-color);
 }
@@ -14,24 +14,22 @@
 }
 
 .subtitle {
-  margin: 0;
   text-align: center;
+  margin: 0;
   color: var(--bunker-color-200);
   margin-bottom: var(--space-lg);
 }
 
+.formColumns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
 .box {
+  padding: 1.25em;
   color: var(--bunker-color);
   background-color: white;
-  margin-bottom: var(--space-lg);
-}
-
-.donationDetailsBox {
-  display: block;
-}
-
-.donationDetailsBoxHidden {
-  display: none;
 }
 
 .legend {
@@ -39,61 +37,120 @@
   margin-bottom: var(--space-md);
 }
 
-.text {
+.radioList {
   margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: calc(-1 * var(--space-sm));
 }
 
-.text:not(:last-child) {
-  margin-bottom: var(--space-md);
+.radioListOption {
+  display: flex;
+  margin-bottom: var(--space-sm);
 }
 
-.fieldsetSecondary .optionList {
+.fieldsetErrorMessage {
+  color: var(--free-speech-red-color);
+  margin-top: var(--space-md);
+}
+
+.submitBtn {
+  width: 100%;
+  margin-top: var(--space-lg);
+}
+
+.donationDetailsBox {
+  margin-top: var(--space-lg);
+}
+
+.donationVariantDesc {
+  margin: 0;
+  margin-bottom: var(--space-lg);
+}
+
+.donationDetailsLabelDesc {
+  display: block;
+  font-size: 0.9em;
+  color: var(--bunker-color-700);
+}
+
+.donationDetailsCharacterGender .legend {
+  margin-bottom: var(--space-sm);
+}
+
+.donationDetailsCharacterGender .radioList {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   margin-right: calc(-1 * var(--space-md));
-  margin-bottom: calc(-1 * var(--space-md));
+  margin-bottom: 0;
 }
 
-.fieldsetSecondary .option {
+.donationDetailsCharacterGender .radioListOption {
   margin-right: var(--space-md);
-  margin-bottom: var(--space-md);
+  margin-bottom: 0;
 }
 
-.optionList {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.donationDetailsCharacterGender .fieldsetErrorMessage {
+  margin-top: var(--space-sm);
 }
 
-.option:not(:last-child) {
-  margin-bottom: var(--space-md);
-}
-
-.donationDetailsItem {
-  margin-bottom: var(--space-md);
+.donationDetailsColumns {
+  display: grid;
+  gap: var(--space-md);
 }
 
 .donationDetailsFooter {
   margin-top: var(--space-lg);
 }
 
-.regPaymentsInputGroupText {
-  margin: 0;
-  margin-top: var(--space-sm);
-  font-size: 0.8em;
-  color: var(--bunker-color-700);
+.donationDetailsFooterItem:not(:last-child) {
+  margin-bottom: var(--space-md);
 }
 
-.regPaymentsInputGroupLink {
-  color: var(--bunker-color);
+.donationDetailsFooterItem .checkboxIconClassName {
+  top: var(--space-sm);
+  transform: none;
 }
 
-.regPaymentsInputGroupLink:hover,
-.regPaymentsInputGroupLink:focus {
+.donationDetailsItemLink {
+  color: inherit;
   text-decoration: underline;
 }
 
-.submitBtn {
-  width: 100%;
+.donationDetailsItemLink:hover,
+.donationDetailsItemLink:focus {
+  text-decoration: none;
+}
+
+@media (--mq-medium) {
+  .section {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+
+  .formColumns {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+
+  .donationDetailsColumns {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+
+  .donationDetailsItem {
+    margin-top: auto;
+  }
+
+  .submitBtn {
+    width: 200px;
+  }
+}
+
+@media (--mq-xlarge) {
+  .section {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
 }

@@ -1,0 +1,52 @@
+@import 'styles/variables';
+
+.errorMessage {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  padding: var(--space-sm);
+  font-size: 0.9em;
+  border-radius: 4px;
+  color: var(--free-speech-red-color);
+  background-color: var(--tulip-color);
+  transition: 280ms opacity 120ms ease-out;
+}
+
+.errorMessage::before {
+  content: '';
+  position: absolute;
+  width: var(--space-md);
+  height: var(--space-md);
+  border: var(--space-sm) solid var(--tulip-color);
+}
+
+.errorMessagePositionBottom {
+  top: calc(100% + var(--space-md));
+  left: 0;
+}
+
+.errorMessagePositionBottom::before {
+  top: 1px;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  border-top-width: 0;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-width: var(--space-md);
+}
+
+.errorMessagePositionTop {
+  top: calc(-1 * var(--space-md));
+  left: 0;
+  transform: translateY(-100%);
+}
+
+.errorMessagePositionTop::before {
+  bottom: 1px;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  border-top-width: var(--space-md);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-width: 0;
+}
