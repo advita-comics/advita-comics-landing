@@ -4,6 +4,7 @@ import ProjectOverview from './components/ProjectOverview';
 import Comics from './components/Comics';
 import SupportUs from './components/SupportUs';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function RootPage() {
   return (
@@ -23,6 +24,8 @@ function RootPage() {
         <Comics />
         <SupportUs />
       </main>
+
+      <Footer />
     </>
   );
 }
