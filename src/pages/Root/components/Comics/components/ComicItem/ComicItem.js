@@ -72,6 +72,7 @@ function ComicItem(props) {
               <img
                 src={image.src}
                 alt={image.alt}
+                className={styles.itemPhotoInner}
               />
             </li>
           ))}
@@ -86,6 +87,7 @@ function ComicItem(props) {
               <img
                 src={image.src}
                 alt={image.alt}
+                className={styles.itemPhotoInner}
               />
             </li>
           ))}
