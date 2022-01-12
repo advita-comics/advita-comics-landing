@@ -9,6 +9,7 @@ import NativeSelect from 'components/ui/NativeSelect';
 import RadioInput from 'components/ui/RadioInput';
 import DONATION_VARIANTS from 'data/donationVariants';
 import { EMAIL_REGEX } from 'helpers/validation/regex';
+import formatCurrency from 'helpers/formatters/formatCurrency';
 import styles from '../../style.module.css';
 
 function findDonationVariant(id) {
@@ -124,9 +125,14 @@ function DonationDetails(props) {
                   <span className={styles.donationDetailsLabelDesc}>
                     Можно указать сумму более
                     {' '}
-                    {selectedDonationVariant.minAmount}
-                    {' '}
-                    рублей.
+                    {formatCurrency({
+                      amount: selectedDonationVariant.minAmount,
+                      currency: 'rub',
+                      formatOptions: {
+                        maximumFractionDigits: 0,
+                        minimumFractionDigits: 0,
+                      },
+                    })}
                   </span>
                 )}
               </>
@@ -325,9 +331,10 @@ function DonationDetails(props) {
                       Подключить ежемесячный автоплатёж на сумму
                       {' '}
                       <b>
-                        {donationAmountValue}
-                        {' '}
-                        ₽
+                        {formatCurrency({
+                          amount: donationAmountValue,
+                          currency: 'rub',
+                        })}
                       </b>
                       .
                     </>

@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import formatCurrency from 'helpers/formatters/formatCurrency';
 import styles from './style.module.css';
 
 function ProjectOverview() {
@@ -43,13 +44,33 @@ function ProjectOverview() {
               <table className={styles.donationInfoTable}>
                 <tbody>
                   <tr>
-                    <th className={styles.donationInfoTerm}>245 450 ₽</th>
+                    <th className={styles.donationInfoTerm}>
+                      {formatCurrency({
+                        amount: 245450,
+                        currency: 'rub',
+                        formatOptions: {
+                          maximumFractionDigits: 0,
+                          minimumFractionDigits: 0,
+                        },
+                      })}
+                    </th>
                     <th className={styles.donationInfoTerm}>5 345</th>
                     <th className={styles.donationInfoTerm}>85</th>
                   </tr>
 
                   <tr>
-                    <td className={styles.donationInfoDesc}>из 750 000 ₽</td>
+                    <td className={styles.donationInfoDesc}>
+                      из
+                      {' '}
+                      {formatCurrency({
+                        amount: 750000,
+                        currency: 'rub',
+                        formatOptions: {
+                          maximumFractionDigits: 0,
+                          minimumFractionDigits: 0,
+                        },
+                      })}
+                    </td>
                     <td className={styles.donationInfoDesc}>Взносы</td>
                     <td className={styles.donationInfoDesc}>Дней прошло</td>
                   </tr>
