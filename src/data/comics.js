@@ -32,6 +32,7 @@ import cassiaCompactPage13 from 'media/images/cassia-compact/13.jpg';
 import cassiaCompactPage14 from 'media/images/cassia-compact/14.jpg';
 import cassiaCompactPage15 from 'media/images/cassia-compact/15.jpg';
 import cassiaCompactPage16 from 'media/images/cassia-compact/16.jpg';
+import cassiaCompactPage17 from 'media/images/cassia-compact/17.jpg';
 
 import foxPdf from 'media/documents/fox.pdf';
 import foxPreview from 'media/images/fox/preview.jpg';
@@ -219,6 +220,10 @@ const COMICS = [
         },
         {
           src: cassiaCompactPage16,
+          alt: '',
+        },
+        {
+          src: cassiaCompactPage17,
           alt: '',
         },
       ],

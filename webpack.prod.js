@@ -102,7 +102,7 @@ const getConfig = (target) => ({
         plugins: [
           ['gifsicle', { interlaced: true }],
           ['mozjpeg', { quality: 70, progressive: true }],
-          ['pngquant', { quality: [0.3, 0.5], speed: 1 }],
+          ['pngquant'],
           ['svgo'],
         ],
       },
