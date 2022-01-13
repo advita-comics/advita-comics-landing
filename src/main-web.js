@@ -1,5 +1,6 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
+import 'intersection-observer';
 import React, { StrictMode, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import ReactModal from 'react-modal';
