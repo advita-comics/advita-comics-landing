@@ -2,8 +2,8 @@
 
 .section {
   width: 100%;
-  padding-top: var(--space-md);
-  padding-bottom: var(--space-md);
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
   color: var(--bunker-color);
   background-color: white;
 }
@@ -22,6 +22,7 @@
 
 .comicList {
   margin: 0;
+  margin-bottom: calc(var(--space-lg) * -1);
   padding: 0;
   list-style: none;
 
@@ -32,22 +33,9 @@
 }
 
 @media (--mq-medium) {
-  .section {
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
-  }
-
   .comicList {
     flex-direction: row;
     align-items: flex-start;
     margin-right: calc(var(--space-lg) * -1);
-    margin-bottom: calc(var(--space-lg) * -1);
-  }
-}
-
-@media (--mq-xlarge) {
-  .section {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-xl);
   }
 }

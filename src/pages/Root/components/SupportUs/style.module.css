@@ -2,8 +2,8 @@
 
 .section {
   width: 100%;
-  padding-top: var(--space-md);
-  padding-bottom: var(--space-md);
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
   color: white;
   background-color: var(--bunker-color);
 }
@@ -124,11 +124,6 @@
 }
 
 @media (--mq-medium) {
-  .section {
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
-  }
-
   .formColumns {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-lg);
@@ -145,12 +140,5 @@
 
   .submitBtn {
     width: 200px;
-  }
-}
-
-@media (--mq-xlarge) {
-  .section {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-xl);
   }
 }

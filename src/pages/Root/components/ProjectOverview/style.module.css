@@ -3,7 +3,7 @@
 .section {
   width: 100%;
   padding-top: var(--space-md);
-  padding-bottom: var(--space-md);
+  padding-bottom: var(--space-lg);
   background-color: var(--bunker-color);
   color: white;
 }
@@ -85,8 +85,8 @@
 
 @media (--mq-medium) {
   .section {
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
   }
 
   .title {
@@ -116,16 +116,5 @@
 
   .projectDesc {
     margin-bottom: var(--space-lg);
-  }
-}
-
-@media (--mq-xlarge) {
-  .section {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-xl);
-  }
-
-  .title {
-    margin-bottom: var(--space-xl);
   }
 }
