@@ -49,6 +49,23 @@ import foxPage10 from 'media/images/fox/10.jpg';
 import foxPage11 from 'media/images/fox/11.jpg';
 import foxPage12 from 'media/images/fox/12.jpg';
 
+import foxCompactPreview from 'media/images/fox-compact/preview.jpg';
+import foxCompactPage1 from 'media/images/fox-compact/01.jpg';
+import foxCompactPage2 from 'media/images/fox-compact/02.jpg';
+import foxCompactPage3 from 'media/images/fox-compact/03.jpg';
+import foxCompactPage4 from 'media/images/fox-compact/04.jpg';
+import foxCompactPage5 from 'media/images/fox-compact/05.jpg';
+import foxCompactPage6 from 'media/images/fox-compact/06.jpg';
+import foxCompactPage7 from 'media/images/fox-compact/07.jpg';
+import foxCompactPage8 from 'media/images/fox-compact/08.jpg';
+import foxCompactPage9 from 'media/images/fox-compact/09.jpg';
+import foxCompactPage10 from 'media/images/fox-compact/10.jpg';
+import foxCompactPage11 from 'media/images/fox-compact/11.jpg';
+import foxCompactPage12 from 'media/images/fox-compact/12.jpg';
+import foxCompactPage13 from 'media/images/fox-compact/13.jpg';
+import foxCompactPage14 from 'media/images/fox-compact/14.jpg';
+import foxCompactPage15 from 'media/images/fox-compact/15.jpg';
+
 import oChicksPdf from 'media/documents/o-chicks.pdf';
 import oChicksPreview from 'media/images/o-chicks/preview.jpg';
 import oChicksPage1 from 'media/images/o-chicks/01.jpg';
@@ -290,7 +307,72 @@ const COMICS = [
       },
     ],
     compact: {
-      images: [],
+      preview: {
+        src: foxCompactPreview,
+        alt: 'Алика Фокс. Огненный Демон. История Алины Демченко.',
+      },
+      images: [
+        {
+          src: foxCompactPage1,
+          alt: '',
+        },
+        {
+          src: foxCompactPage2,
+          alt: '',
+        },
+        {
+          src: foxCompactPage3,
+          alt: '',
+        },
+        {
+          src: foxCompactPage4,
+          alt: '',
+        },
+        {
+          src: foxCompactPage5,
+          alt: '',
+        },
+        {
+          src: foxCompactPage6,
+          alt: '',
+        },
+        {
+          src: foxCompactPage7,
+          alt: '',
+        },
+        {
+          src: foxCompactPage8,
+          alt: '',
+        },
+        {
+          src: foxCompactPage9,
+          alt: '',
+        },
+        {
+          src: foxCompactPage10,
+          alt: '',
+        },
+        {
+          src: foxCompactPage11,
+          alt: '',
+        },
+        {
+          src: foxCompactPage12,
+          alt: '',
+        },
+        {
+          src: foxCompactPage13,
+          alt: '',
+        },
+        {
+          src: foxCompactPage14,
+          alt: '',
+        },
+        {
+          src: foxCompactPage15,
+          alt: '',
+        },
+      ],
     },
   },
 
