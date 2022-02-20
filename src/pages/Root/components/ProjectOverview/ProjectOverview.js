@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import formatCurrency from 'helpers/formatters/formatCurrency';
+import APICall from 'helpers/api/APICall';
 import styles from './style.module.css';
 
 function ProjectOverview() {
+  const [companyDetails, setCompanyDetails] = useState({});
+
+  useEffect(() => {
+    APICall({
+      method: 'GET',
+      endpoint: `${process.env.API_URL}/company`,
+    }).then((response) => setCompanyDetails(response.body))
+      .catch(console.error); // eslint-disable-line no-console
+  }, []);
+
+  const collectedAmountPercent = (
+    companyDetails.collectedAmount / (companyDetails.terminationAmount / 100)
+  ).toFixed(2);
+
   return (
     <section className={styles.section}>
       <div className={classNames('container', styles.sectionInner)}>
@@ -35,10 +50,11 @@ function ProjectOverview() {
                   'progress-bar progress-bar_primary',
                   styles.donationInfoProgress,
                 )}
-                value={70}
+                value={collectedAmountPercent || 0}
                 max={100}
               >
-                70% из 100% собрано
+                {collectedAmountPercent}
+                % из 100% собрано
               </progress>
 
               <table className={styles.donationInfoTable}>
@@ -46,7 +62,7 @@ function ProjectOverview() {
                   <tr>
                     <th className={styles.donationInfoTerm}>
                       {formatCurrency({
-                        amount: 245450,
+                        amount: companyDetails.collectedAmount,
                         currency: 'rub',
                         formatOptions: {
                           maximumFractionDigits: 0,
@@ -54,8 +70,12 @@ function ProjectOverview() {
                         },
                       })}
                     </th>
-                    <th className={styles.donationInfoTerm}>5 345</th>
-                    <th className={styles.donationInfoTerm}>85</th>
+                    <th className={styles.donationInfoTerm}>
+                      {companyDetails.donationCount}
+                    </th>
+                    <th className={styles.donationInfoTerm}>
+                      {companyDetails.dayRemains}
+                    </th>
                   </tr>
 
                   <tr>
@@ -63,7 +83,7 @@ function ProjectOverview() {
                       из
                       {' '}
                       {formatCurrency({
-                        amount: 750000,
+                        amount: companyDetails.terminationAmount,
                         currency: 'rub',
                         formatOptions: {
                           maximumFractionDigits: 0,
