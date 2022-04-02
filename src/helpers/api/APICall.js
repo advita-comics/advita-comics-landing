@@ -1,3 +1,5 @@
+import superagent from 'superagent';
+
 async function APICall(params) {
   const {
     method,
@@ -9,12 +11,7 @@ async function APICall(params) {
     disableTLSCerts,
   } = params;
 
-  const superagent = await import(
-    /* webpackChunkName: "superagent" */
-    'superagent'
-  );
-
-  let request = superagent.default[method.toLowerCase()](endpoint);
+  let request = superagent[method.toLowerCase()](endpoint);
 
   if (query) {
     request = request.query(query);

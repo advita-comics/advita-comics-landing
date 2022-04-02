@@ -10,7 +10,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 // eslint-disable-next-line import/no-unresolved
 const manifest = isProduction ? require('../dist/web/manifest.json') : null;
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/no-unresolved, import/extensions
 const renderApp = isProduction ? require('../dist/node/main.js').default : null;
 
 async function runApplication() {

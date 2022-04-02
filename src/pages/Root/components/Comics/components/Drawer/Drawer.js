@@ -47,6 +47,7 @@ function Drawer(props) {
       isOpen={isOpen}
       className={classNames(styles.drawer, className)}
       overlayClassName={classNames(styles.overlay, overlayClassName)}
+      // eslint-disable-next-line
       onAfterOpen={onAfterOpen}
     >
       <header ref={drawerHeaderRef} className={styles.header}>
