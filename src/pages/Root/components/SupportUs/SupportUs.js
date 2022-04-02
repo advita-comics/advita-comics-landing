@@ -71,7 +71,7 @@ function SupportUs() {
       onSuccess() {
         APICall({
           method: 'POST',
-          endpoint: `${process.env.API_URL}/donation`,
+          endpoint: `${process.env.API_URL || 'http://192.168.99.102:4040'}/donation`,
           payload: formData,
         }).then(() => setDonationCreationStatus('SUCCESS'))
           .catch(() => setDonationCreationStatus('FAILURE'));

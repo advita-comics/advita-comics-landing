@@ -10,7 +10,7 @@ function ProjectOverview() {
   useEffect(() => {
     APICall({
       method: 'GET',
-      endpoint: `${process.env.API_URL}/company`,
+      endpoint: `${process.env.API_URL || 'http://192.168.99.102:4040'}/company`,
     }).then((response) => setCompanyDetails(response.body))
       .catch(console.error); // eslint-disable-line no-console
   }, []);
