@@ -1,8 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import classNames from 'classnames';
 import RadioInput from 'components/ui/RadioInput';
+import Alert from 'components/ui/Alert';
+import APICall from 'helpers/api/APICall';
 import DONATION_VARIANTS from 'data/donationVariants';
 import DonationDetails from './components/DonationDetails';
 import styles from './style.module.css';
@@ -12,13 +14,10 @@ function findDonationVariant(id) {
 }
 
 function SupportUs() {
+  const [donationCreationStatus, setDonationCreationStatus] = useState(null);
+
   const formContext = useForm({
     mode: 'onBlur',
-    defaultValues: {
-      // In order to show placeholder for selects
-      costumeColor: '',
-      hairColor: '',
-    },
   });
 
   const {
@@ -33,21 +32,24 @@ function SupportUs() {
     const donationVariant = findDonationVariant(target.value);
 
     if (donationVariant) {
-      setValue('donationAmount', donationVariant.minAmount, {
+      setValue('amount', donationVariant.minAmount, {
         shouldValidate: true,
       });
     }
   }
 
   function onSubmit(values) {
+    const formData = { ...values };
+    delete formData.variantId;
+
     // eslint-disable-next-line no-console
-    console.log(values);
+    console.log(formData);
 
     const widgetData = {};
 
     const widget = new window.cp.CloudPayments();
 
-    if (values.areRegularPaymentsEnabled) {
+    if (formData.recurrent) {
       widgetData.cloudPayments = {
         recurrent: {
           interval: 'Month',
@@ -59,14 +61,33 @@ function SupportUs() {
     widget.pay('charge', {
       publicId: process.env.CLOUDPAYMENTS_PUBLIC_ID,
       description: 'Благотворительное пожертвование в фонд AdVita',
-      amount: parseFloat(values.donationAmount),
+      amount: parseFloat(formData.amount),
       currency: 'RUB',
-      accountId: values.userEmail,
-      email: values.userEmail,
+      accountId: formData.userEmail,
+      email: formData.userEmail,
       requireEmail: true,
       data: widgetData,
+    }, {
+      onSuccess() {
+        APICall({
+          method: 'POST',
+          endpoint: `${process.env.API_URL}/donation`,
+          payload: formData,
+        }).then(() => setDonationCreationStatus('SUCCESS'))
+          .catch(() => setDonationCreationStatus('FAILURE'));
+      },
+      onFail() {
+        setDonationCreationStatus('FAILURE');
+      },
     });
   }
+
+  useEffect(() => {
+    if (donationCreationStatus) {
+      const section = document.getElementById('support-us');
+      section.scrollIntoView();
+    }
+  }, [donationCreationStatus]);
 
   return (
     <section className={styles.section} id="support-us">
@@ -79,6 +100,30 @@ function SupportUs() {
           Выбери историю, к продолжению которой ты присоединишься, и настрой
           элементы персонализации твоего героя.
         </p>
+
+        {
+          (donationCreationStatus === 'SUCCESS') && (
+            <Alert
+              severity="success"
+              block
+              className={styles.alert}
+            >
+              Пожертвование было успешно создано!
+            </Alert>
+          )
+        }
+
+        {
+          (donationCreationStatus === 'FAILURE') && (
+            <Alert
+              severity="error"
+              block
+              className={styles.alert}
+            >
+              Ошибка при создании пожертвования, пожалуйста попробуйте позже.
+            </Alert>
+          )
+        }
 
         <form
           className={styles.form}
@@ -96,7 +141,7 @@ function SupportUs() {
 
                 <ul className={styles.radioList}>
                   <RadioInput
-                    {...register('donationDirectionId', {
+                    {...register('directionId', {
                       required: 'Поле "Направление пожертвования" является обязательным.',
                     })}
                     value="1"
@@ -107,7 +152,7 @@ function SupportUs() {
                   />
 
                   <RadioInput
-                    {...register('donationDirectionId', {
+                    {...register('directionId', {
                       required: 'Поле "Направление пожертвования" является обязательным.',
                     })}
                     value="2"
@@ -118,7 +163,7 @@ function SupportUs() {
                   />
 
                   <RadioInput
-                    {...register('donationDirectionId', {
+                    {...register('directionId', {
                       required: 'Поле "Направление пожертвования" является обязательным.',
                     })}
                     value="3"
@@ -129,7 +174,7 @@ function SupportUs() {
                   />
 
                   <RadioInput
-                    {...register('donationDirectionId', {
+                    {...register('directionId', {
                       required: 'Поле "Направление пожертвования" является обязательным.',
                     })}
                     value="4"
@@ -140,9 +185,9 @@ function SupportUs() {
                   />
                 </ul>
 
-                {errors.donationDirectionId?.message && (
+                {errors.directionId?.message && (
                   <aside className={styles.fieldsetErrorMessage}>
-                    {errors.donationDirectionId?.message}
+                    {errors.directionId.message}
                   </aside>
                 )}
               </fieldset>
@@ -160,7 +205,7 @@ function SupportUs() {
                   {DONATION_VARIANTS.map((donationVariant) => (
                     <RadioInput
                       key={donationVariant.id}
-                      {...register('donationVariantId', {
+                      {...register('variantId', {
                         required: 'Поле "Сумма пожертвования" является обязательным.',
                         onChange: handleDonationVariantIdChange,
                       })}
@@ -173,9 +218,9 @@ function SupportUs() {
                   ))}
                 </ul>
 
-                {errors.donationVariantId?.message && (
+                {errors.variantId?.message && (
                   <aside className={styles.fieldsetErrorMessage}>
-                    {errors.donationVariantId?.message}
+                    {errors.variantId.message}
                   </aside>
                 )}
               </fieldset>

@@ -1,0 +1,63 @@
+@import 'styles/variables';
+
+.alert {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.9em;
+  padding: 1em;
+  border-radius: 4px;
+  min-height: 4em;
+}
+
+.alert svg {
+  width: 24px;
+  margin-right: var(--space-md);
+}
+
+.alertBody {
+  width: 50px;
+  flex-grow: 1;
+}
+
+.alertSuccess {
+  color: rgb(30, 70, 32);
+  background-color: rgb(237, 247, 237);
+}
+
+.alertError {
+  color: rgb(95, 33, 32);
+  background-color: rgb(253, 237, 237);
+}
+
+.alertWarning {
+  color: rgb(102, 60, 0);
+  background-color: rgb(255, 244, 229);
+}
+
+.alertInfo {
+  color: rgb(1, 67, 97);
+  background-color: rgb(229, 246, 253);
+}
+
+@media (--mq-medium) {
+  /* Enable animation only for PC, due to bug in firefox mobile */
+  .alert {
+    animation-name: alert-slide-bottom;
+    animation-duration: 0.6s;
+  }
+
+  .alertBlock {
+    animation: none;
+  }
+}
+
+@keyframes alert-slide-bottom {
+  0% {
+    transform: translateY(2000px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

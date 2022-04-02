@@ -1,0 +1,26 @@
+@import 'styles/variables';
+
+.app-level-notifications {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  bottom: var(--space-sm);
+  left: var(--space-sm);
+  right: var(--space-sm);
+}
+
+.app-level-notifications__item:not(:last-child) {
+  margin-bottom: var(--space-md);
+}
+
+@media (--mq-small) {
+  .app-level-notifications {
+    max-width: 22em;
+    bottom: var(--space-md);
+    left: var(--space-md);
+    right: var(--space-md);
+  }
+}

@@ -34,7 +34,7 @@ function DonationDetails(props) {
     donationAmountValue,
   ] = useWatch({
     control,
-    name: ['donationDirectionId', 'donationVariantId', 'donationAmount'],
+    name: ['directionId', 'variantId', 'amount'],
   });
 
   const selectedDonationVariant = findDonationVariant(donationVariantIdValue);
@@ -43,13 +43,13 @@ function DonationDetails(props) {
 
   switch (Number(donationVariantIdValue)) {
     case 1:
-      allowedCharacterFields = ['characterName', 'characterGender'];
+      allowedCharacterFields = ['name', 'gender'];
       break;
     case 2:
-      allowedCharacterFields = ['characterName', 'characterGender', 'hairColor'];
+      allowedCharacterFields = ['name', 'gender', 'hairColor'];
       break;
     case 3:
-      allowedCharacterFields = ['characterName', 'characterGender', 'hairColor', 'costumeColor'];
+      allowedCharacterFields = ['name', 'gender', 'hairColor', 'costumeColor'];
       break;
     case 4:
       allowedCharacterFields = [];
@@ -71,7 +71,7 @@ function DonationDetails(props) {
     ));
 
     if (newDonationVariant) {
-      setValue('donationVariantId', String(newDonationVariant.id), {
+      setValue('variantId', String(newDonationVariant.id), {
         shouldValidate: true,
       });
     }
@@ -107,7 +107,7 @@ function DonationDetails(props) {
 
         <div className={styles.donationDetailsColumns}>
           <TextInput
-            {...register('donationAmount', {
+            {...register('amount', {
               required: 'Поле "Сумма пожертвования" является обязательным.',
               min: {
                 value: 10,
@@ -138,7 +138,7 @@ function DonationDetails(props) {
               </>
             )}
             min="10"
-            errorMessage={errors.donationAmount?.message}
+            errorMessage={errors.amount?.message}
             containerClassName={styles.donationDetailsItem}
           />
 
@@ -168,9 +168,9 @@ function DonationDetails(props) {
           />
 
           {
-            isHeroFieldAllowed('characterName') && (
+            isHeroFieldAllowed('name') && (
               <TextInput
-                {...register('characterName', {
+                {...register('character.name', {
                   required: 'Поле "Имя персонажа" является обязательным.',
                   maxLength: {
                     value: 25,
@@ -186,14 +186,14 @@ function DonationDetails(props) {
                     </span>
                   </>
                 )}
-                errorMessage={errors.characterName?.message}
+                errorMessage={errors.character?.name?.message}
                 containerClassName={styles.donationDetailsItem}
               />
             )
           }
 
           {
-            isHeroFieldAllowed('characterGender') && (
+            isHeroFieldAllowed('gender') && (
               <fieldset
                 className={classNames(
                   styles.fieldset,
@@ -207,7 +207,7 @@ function DonationDetails(props) {
 
                 <ul className={styles.radioList}>
                   <RadioInput
-                    {...register('characterGender', {
+                    {...register('character.gender', {
                       required: 'Поле "Пол персонажа" является обязательным.',
                     })}
                     value="0"
@@ -218,7 +218,7 @@ function DonationDetails(props) {
                   />
 
                   <RadioInput
-                    {...register('characterGender', {
+                    {...register('character.gender', {
                       required: 'Поле "Пол персонажа" является обязательным.',
                     })}
                     value="1"
@@ -229,9 +229,9 @@ function DonationDetails(props) {
                   />
                 </ul>
 
-                {errors.characterGender?.message && (
+                {errors.character?.gender?.message && (
                   <aside className={styles.fieldsetErrorMessage}>
-                    {errors.characterGender?.message}
+                    {errors.character.gender.message}
                   </aside>
                 )}
               </fieldset>
@@ -241,15 +241,15 @@ function DonationDetails(props) {
           {
             isHeroFieldAllowed('costumeColor') && (
               <NativeSelect
-                {...register('costumeColor', {
+                {...register('character.costumeColor', {
                   required: 'Поле "Цвет костюма" является обязательным.',
                 })}
                 label="Цвет костюма вашего персонажа:"
                 id="donation-details-character-costume-color"
-                errorMessage={errors.costumeColor?.message}
+                errorMessage={errors.character?.costumeColor?.message}
                 containerClassName={styles.donationDetailsItem}
               >
-                <NativeSelect.Option value="" disabled>
+                <NativeSelect.Option value="">
                   -- Выберите цвет--
                 </NativeSelect.Option>
                 <NativeSelect.Option value="red">Красный</NativeSelect.Option>
@@ -265,15 +265,15 @@ function DonationDetails(props) {
           {
             isHeroFieldAllowed('hairColor') && (
               <NativeSelect
-                {...register('hairColor', {
+                {...register('character.hairColor', {
                   required: 'Поле "Цвет волос" является обязательным.',
                 })}
                 label="Цвет волос вашего персонажа:"
                 id="donation-details-character-hair-color"
-                errorMessage={errors.hairColor?.message}
+                errorMessage={errors.character?.hairColor?.message}
                 containerClassName={styles.donationDetailsItem}
               >
-                <NativeSelect.Option value="" disabled>
+                <NativeSelect.Option value="">
                   -- Выберите цвет--
                 </NativeSelect.Option>
                 <NativeSelect.Option value="red">Красный</NativeSelect.Option>
@@ -289,7 +289,7 @@ function DonationDetails(props) {
 
         <div className={styles.donationDetailsFooter}>
           <CheckboxInput
-            {...register('isSubscribedToGetReport')}
+            {...register('getReportOnFundsSpent')}
             id="donation-details-is-subscribed-to-get-report"
             label={(
               <>
@@ -305,7 +305,7 @@ function DonationDetails(props) {
           />
 
           <CheckboxInput
-            {...register('isSubscribedToTrackProgress')}
+            {...register('trackProjectProgress')}
             id="donation-details-is-subscribed-to-track-progress"
             label={(
               <>
@@ -320,8 +320,8 @@ function DonationDetails(props) {
           />
 
           <CheckboxInput
-            {...register('areRegularPaymentsEnabled')}
-            id="donation-details-reg-payments"
+            {...register('recurrent')}
+            id="donation-details-recurrent"
             label={(
               <>
                 Помогать ежемесячно
