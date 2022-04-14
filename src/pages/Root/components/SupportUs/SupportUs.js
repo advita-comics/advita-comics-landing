@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import RadioInput from 'components/ui/RadioInput';
 import Alert from 'components/ui/Alert';
 import APICall from 'helpers/api/APICall';
+import omit from 'helpers/functions/omit';
 import DONATION_VARIANTS from 'data/donationVariants';
 import DonationDetails from './components/DonationDetails';
 import styles from './style.module.css';
@@ -18,6 +19,7 @@ function SupportUs() {
 
   const formContext = useForm({
     mode: 'onBlur',
+    shouldUnregister: true,
   });
 
   const {
@@ -32,15 +34,17 @@ function SupportUs() {
     const donationVariant = findDonationVariant(target.value);
 
     if (donationVariant) {
-      setValue('amount', donationVariant.minAmount, {
+      setValue('donation.amount', donationVariant.minAmount, {
         shouldValidate: true,
       });
     }
   }
 
   function onSubmit(values) {
-    const formData = { ...values };
-    delete formData.variantId;
+    const formData = {
+      ...values,
+      donation: omit(values.donation, 'variantId'),
+    };
 
     // eslint-disable-next-line no-console
     console.log(formData);
@@ -49,7 +53,7 @@ function SupportUs() {
 
     const widget = new window.cp.CloudPayments();
 
-    if (formData.recurrent) {
+    if (formData.donation.areRegularPaymentsEnabled) {
       widgetData.cloudPayments = {
         recurrent: {
           interval: 'Month',
@@ -61,17 +65,17 @@ function SupportUs() {
     widget.pay('charge', {
       publicId: process.env.CLOUDPAYMENTS_PUBLIC_ID,
       description: 'Благотворительное пожертвование в фонд AdVita',
-      amount: parseFloat(formData.amount),
+      amount: parseFloat(formData.donation.amount),
       currency: 'RUB',
-      accountId: formData.userEmail,
-      email: formData.userEmail,
+      accountId: formData.donation.userEmail,
+      email: formData.donation.userEmail,
       requireEmail: true,
       data: widgetData,
     }, {
       onSuccess() {
         APICall({
           method: 'POST',
-          endpoint: `${process.env.API_URL || 'http://192.168.99.102:4040'}/donation`,
+          endpoint: `${process.env.API_URL}/donation`,
           payload: formData,
         }).then(() => setDonationCreationStatus('SUCCESS'))
           .catch(() => setDonationCreationStatus('FAILURE'));
@@ -141,7 +145,7 @@ function SupportUs() {
 
                 <ul className={styles.radioList}>
                   <RadioInput
-                    {...register('directionId', {
+                    {...register('donation.directionId', {
                       required: 'Поле "Направление пожертвования" является обязательным.',
                     })}
                     value="1"
@@ -152,7 +156,7 @@ function SupportUs() {
                   />
 
                   <RadioInput
-                    {...register('directionId', {
+                    {...register('donation.directionId', {
                       required: 'Поле "Направление пожертвования" является обязательным.',
                     })}
                     value="2"
@@ -163,7 +167,7 @@ function SupportUs() {
                   />
 
                   <RadioInput
-                    {...register('directionId', {
+                    {...register('donation.directionId', {
                       required: 'Поле "Направление пожертвования" является обязательным.',
                     })}
                     value="3"
@@ -174,7 +178,7 @@ function SupportUs() {
                   />
 
                   <RadioInput
-                    {...register('directionId', {
+                    {...register('donation.directionId', {
                       required: 'Поле "Направление пожертвования" является обязательным.',
                     })}
                     value="4"
@@ -185,9 +189,9 @@ function SupportUs() {
                   />
                 </ul>
 
-                {errors.directionId?.message && (
+                {errors.donation?.directionId?.message && (
                   <aside className={styles.fieldsetErrorMessage}>
-                    {errors.directionId.message}
+                    {errors.donation.directionId.message}
                   </aside>
                 )}
               </fieldset>
@@ -205,7 +209,7 @@ function SupportUs() {
                   {DONATION_VARIANTS.map((donationVariant) => (
                     <RadioInput
                       key={donationVariant.id}
-                      {...register('variantId', {
+                      {...register('donation.variantId', {
                         required: 'Поле "Сумма пожертвования" является обязательным.',
                         onChange: handleDonationVariantIdChange,
                       })}
@@ -218,9 +222,9 @@ function SupportUs() {
                   ))}
                 </ul>
 
-                {errors.variantId?.message && (
+                {errors.donation?.variantId?.message && (
                   <aside className={styles.fieldsetErrorMessage}>
-                    {errors.variantId.message}
+                    {errors.donation.variantId.message}
                   </aside>
                 )}
               </fieldset>

@@ -34,7 +34,7 @@ function DonationDetails(props) {
     donationAmountValue,
   ] = useWatch({
     control,
-    name: ['directionId', 'variantId', 'amount'],
+    name: ['donation.directionId', 'donation.variantId', 'donation.amount'],
   });
 
   const selectedDonationVariant = findDonationVariant(donationVariantIdValue);
@@ -71,7 +71,7 @@ function DonationDetails(props) {
     ));
 
     if (newDonationVariant) {
-      setValue('variantId', String(newDonationVariant.id), {
+      setValue('donation.variantId', String(newDonationVariant.id), {
         shouldValidate: true,
       });
     }
@@ -107,7 +107,7 @@ function DonationDetails(props) {
 
         <div className={styles.donationDetailsColumns}>
           <TextInput
-            {...register('amount', {
+            {...register('donation.amount', {
               required: 'Поле "Сумма пожертвования" является обязательным.',
               min: {
                 value: 10,
@@ -138,12 +138,12 @@ function DonationDetails(props) {
               </>
             )}
             min="10"
-            errorMessage={errors.amount?.message}
+            errorMessage={errors.donation?.amount?.message}
             containerClassName={styles.donationDetailsItem}
           />
 
           <TextInput
-            {...register('userEmail', {
+            {...register('donation.userEmail', {
               required: 'Поле "e-mail" является обязательным.',
               pattern: {
                 value: EMAIL_REGEX,
@@ -163,7 +163,7 @@ function DonationDetails(props) {
                 )}
               </>
             )}
-            errorMessage={errors.userEmail?.message}
+            errorMessage={errors.donation?.userEmail?.message}
             containerClassName={styles.donationDetailsItem}
           />
 
@@ -289,7 +289,7 @@ function DonationDetails(props) {
 
         <div className={styles.donationDetailsFooter}>
           <CheckboxInput
-            {...register('getReportOnFundsSpent')}
+            {...register('subscriptions.getReport')}
             id="donation-details-is-subscribed-to-get-report"
             label={(
               <>
@@ -305,7 +305,7 @@ function DonationDetails(props) {
           />
 
           <CheckboxInput
-            {...register('trackProjectProgress')}
+            {...register('subscriptions.trackProgress')}
             id="donation-details-is-subscribed-to-track-progress"
             label={(
               <>
@@ -320,7 +320,7 @@ function DonationDetails(props) {
           />
 
           <CheckboxInput
-            {...register('recurrent')}
+            {...register('donation.areRegularPaymentsEnabled')}
             id="donation-details-recurrent"
             label={(
               <>
