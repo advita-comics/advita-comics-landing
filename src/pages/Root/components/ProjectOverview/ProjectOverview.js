@@ -11,6 +11,7 @@ function ProjectOverview() {
     APICall({
       method: 'GET',
       endpoint: `${process.env.API_URL}/company`,
+      withCredentials: false,
     }).then((response) => setCompanyDetails(response.body))
       .catch(console.error); // eslint-disable-line no-console
   }, []);

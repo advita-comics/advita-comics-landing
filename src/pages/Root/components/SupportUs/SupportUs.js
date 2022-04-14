@@ -77,6 +77,7 @@ function SupportUs() {
           method: 'POST',
           endpoint: `${process.env.API_URL}/donation`,
           payload: formData,
+          withCredentials: false,
         }).then(() => setDonationCreationStatus('SUCCESS'))
           .catch(() => setDonationCreationStatus('FAILURE'));
       },
