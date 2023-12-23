@@ -5,16 +5,21 @@ import APICall from 'helpers/api/APICall';
 import styles from './style.module.css';
 
 function ProjectOverview() {
-  const [companyDetails, setCompanyDetails] = useState({});
+  const [companyDetails, setCompanyDetails] = useState({
+    collectedAmount: 0,
+    terminationAmount: 0,
+    donationCount: 0,
+    dayRemains: 0,
+  });
 
-  useEffect(() => {
-    APICall({
-      method: 'GET',
-      endpoint: `${process.env.API_URL}/company`,
-      withCredentials: false,
-    }).then((response) => setCompanyDetails(response.body))
-      .catch(console.error); // eslint-disable-line no-console
-  }, []);
+  // useEffect(() => {
+  //   APICall({
+  //     method: 'GET',
+  //     endpoint: `${process.env.API_URL}/company`,
+  //     withCredentials: false,
+  //   }).then((response) => setCompanyDetails(response.body))
+  //     .catch(console.error); // eslint-disable-line no-console
+  // }, []);
 
   const collectedAmountPercent = (
     companyDetails.collectedAmount / (companyDetails.terminationAmount / 100)
